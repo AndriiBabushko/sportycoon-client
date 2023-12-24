@@ -10,7 +10,7 @@
     "dev": "next dev"
   },
   "dependencies": {
-    "@repo/components": "workspace:*"
+    "@repo/ui": "workspace:*"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
