@@ -12,16 +12,17 @@ const project = resolve(process.cwd(), "tsconfig.json");
  *
  */
 
-/** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["eslint:recommended", "prettier", "eslint-config-turbo"],
-  plugins: ["only-warn"],
-  globals: {
-    React: true,
-    JSX: true,
+  extends: [
+    "@vercel/style-guide/eslint/browser",
+    "@vercel/style-guide/eslint/typescript",
+    "@vercel/style-guide/eslint/react",
+  ].map(require.resolve),
+  parserOptions: {
+    project,
   },
-  env: {
-    browser: true,
+  globals: {
+    JSX: true,
   },
   settings: {
     "import/resolver": {
@@ -30,14 +31,13 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    ".*.js",
-    "node_modules/",
-    "dist/",
-  ],
-  overrides: [
-    // Force ESLint to detect .tsx files
-    { files: ["*.js?(x)", "*.ts?(x)"] },
-  ],
+  ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
+
+  rules: {
+    "react/prop-types": 0,
+    "no-console": "warn",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+  },
 };

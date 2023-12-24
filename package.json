@@ -5,16 +5,39 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "dayjs": "latest",
+    "zod": "latest",
+    "lodash": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "latest",
+    "@hookform/resolvers": "latest",
+    "react-toastify": "latest",
+    "next": "14.0.4",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.0",
+    "@types/node": "16.11.19"
   },
   "devDependencies": {
+    "typescript": "5.3.3",
+    "@types/lodash": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@repo/ts-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "prettier": "^3.1.0",
+    "prettier": "latest",
+    "lint-staged": "latest",
+    "husky": "latest",
+    "eslint": "latest",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.9.0",
-  "engines": {
-    "node": ">=18"
-  }
+  "lint-staged": {
+    "apps/**/*.{ts,tsx,js}": [
+      "npx eslint --max-warnings=0"
+    ]
+  },
+  "packageManager": "pnpm@8.9.0"
 }

@@ -1,0 +1,19 @@
+{
+  "name": "admin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "start": "next start",
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "@repo/components": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/ts-config": "workspace:*"
+  }
+}
