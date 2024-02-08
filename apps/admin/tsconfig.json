@@ -1,9 +1,0 @@
-{
-  "extends": "@repo/ts-config/nextjs.json",
-  "compilerOptions": {
-    "paths": {
-      "@schemas/*": ["./src/schemas/*"],
-      "@components/*": ["./src/components/*"]
-    }
-  }
-}
