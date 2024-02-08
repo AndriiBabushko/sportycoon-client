@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "github": {
+    "enabled": false
+  },
+  "builds": [
+    {
+      "src": "/apps/main/dist/*",
+      "use": "@now/static-build"
+    }
+  ]
+}
