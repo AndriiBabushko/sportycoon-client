@@ -1,3 +1,7 @@
-export default function Home() {
+import { FC } from "react";
+
+const Home: FC = () => {
   return <h1>MAIN</h1>;
-}
+};
+
+export default Home;
