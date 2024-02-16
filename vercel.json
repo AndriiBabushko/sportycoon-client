@@ -2,15 +2,5 @@
   "version": 2,
   "github": {
     "enabled": false
-  },
-  "builds": [
-    {
-      "src": "/apps/docs/storybook-static/*",
-      "use": "@now/static-build"
-    },
-    {
-      "src": "/apps/admin/dist/*",
-      "use": "@now/static-build"
-    }
-  ]
+  }
 }
