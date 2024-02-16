@@ -5,7 +5,7 @@
   },
   "builds": [
     {
-      "src": "/apps/main/dist/*",
+      "src": "/apps/docs/storybook-static/*",
       "use": "@now/static-build"
     }
   ]
