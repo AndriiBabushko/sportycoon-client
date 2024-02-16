@@ -134,6 +134,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@storybook/addon-actions':
+        specifier: ^7.6.16
+        version: 7.6.16
       '@storybook/addon-essentials':
         specifier: ^7.6.16
         version: 7.6.16(@types/react-dom@18.2.19)(@types/react@18.2.55)(react-dom@18.2.0)(react@18.2.0)
