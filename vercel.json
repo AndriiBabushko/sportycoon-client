@@ -7,6 +7,10 @@
     {
       "src": "/apps/docs/storybook-static/*",
       "use": "@now/static-build"
+    },
+    {
+      "src": "/apps/admin/dist/*",
+      "use": "@now/static-build"
     }
   ]
 }
