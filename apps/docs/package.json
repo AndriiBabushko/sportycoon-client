@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@sportycoon/ui": "workspace:*"
   },
   "devDependencies": {
+    "@sportycoon/eslint-config": "workspace:*",
+    "@sportycoon/typescript-config": "workspace:*",
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
     "@storybook/addon-links": "^7.6.16",
