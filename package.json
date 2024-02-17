@@ -2,6 +2,8 @@
   "name": "sportycoon-client",
   "private": true,
   "scripts": {
+    "remove:node_modules": "rm -rf node_modules && rm -rf apps/admin/node_modules && rm -rf apps/main/node_modules && rm -rf apps/docs/node_modules && rm -rf packages/eslint-config/node_modules && rm -rf packages/ui/node_modules",
+    "reinstall:deps": "pnpm run remove:node_modules && pnpm i",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
