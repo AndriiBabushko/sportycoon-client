@@ -1,12 +1,11 @@
 {
   "extends": "@sportycoon/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@ui/*": ["./src/*"]
+      "@utils/*": ["./src/*"],
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules"]
 }
