@@ -2,6 +2,7 @@
   "name": "docs",
   "private": true,
   "version": "0.0.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 3002",
@@ -30,6 +31,7 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
     "eslint-config-custom": "workspace:*",
+    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.24",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.23",
