@@ -1,13 +1,12 @@
-import { FC } from "react";
-import { Badge } from "@sportycoon/ui";
+import { Button } from "ui";
 
-const Home: FC = () => {
+export default function Page() {
   return (
-    <div className={"a"}>
-      <h1>ADMIN</h1>
-      <Badge variant={"outline"}>White</Badge>
+    <div className="container flex flex-col gap-5">
+      <h1 className="text-red-700">Docs</h1>
+      <div>
+        <Button>Hello</Button>
+      </div>
     </div>
   );
-};
-
-export default Home;
+}
