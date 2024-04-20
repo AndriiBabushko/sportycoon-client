@@ -1,8 +1,11 @@
 {
-  "extends": "@sportycoon/typescript-config/react-library.json",
+  "extends": "tsconfig/react-library.json",
+  "include": [".", "components/ThemeProvider.tsx"],
+  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
 }
