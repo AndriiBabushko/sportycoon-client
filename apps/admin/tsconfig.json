@@ -6,8 +6,13 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@sportycoon/ui": ["./node_modules/@sportycoon/ui"],
+      "@components/*": ["app/components/*"],
+      "@hooks/*": ["app/hooks/*"],
+      "@store/*": ["app/store/*"],
+      "@utils/*": ["app/utils/*"],
     }
   },
   "include": [
