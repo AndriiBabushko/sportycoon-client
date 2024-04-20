@@ -1,50 +1,114 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button } from './Button';
+import { Button } from "ui";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: 'Example/Button',
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+const meta: Meta = {
+  title: "Example/Button",
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    children: { control: "text", defaultValue: "Button" },
+    variant: { control: "select" },
+    size: { control: "select" },
+    rounded: {
+      options: ["sm", "md", "sm", "lg", "xl", "full"],
+      control: "select",
+      table: {
+        defaultValue: { summary: "md" },
+        type: { summary: "sm | md | sm | lg | xl | full" },
+      },
+    },
+    fullWidth: {
+      control: "boolean",
+      table: {
+        defaultValue: { summary: "false" },
+      },
+    },
+    onClick: { action: "clicked", type: "function" },
   },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    variant: "primary",
+    children: "Button",
+    rounded: "xl",
   },
 };
 
-export const Secondary: Story = {
+export const OutlinePrimary: Story = {
   args: {
-    label: 'Button',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
+    variant: "outline-primary",
+    children: "Button",
+    rounded: "sm",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    variant: "primary",
+    size: "sm",
+    children: "Button",
+  },
+};
+
+export const Large: Story = {
+  args: {
+    variant: "primary",
+    size: "lg",
+    children: "Button",
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    variant: "secondary",
+    children: "Button",
+  },
+};
+
+export const OutlineSecondary: Story = {
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
+  args: {
+    variant: "outline-secondary",
+    children: "Button",
+  },
+};
+
+export const GhostPrimary: Story = {
+  args: {
+    variant: "ghost-primary",
+    children: "Button",
+  },
+};
+
+export const GhostSecondary: Story = {
+  parameters: {
+    backgrounds: { default: "dark" },
+  },
+  args: {
+    variant: "ghost-secondary",
+    children: "Button",
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: "link",
+    children: "Link",
+  },
+};
+
+export const Icon: Story = {
+  args: {
+    size: "icon",
+    children: "Icon",
   },
 };
