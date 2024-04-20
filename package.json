@@ -7,8 +7,7 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter @sportycoon/ui ui:add"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@sportycoon/eslint-config": "workspace:*",
@@ -16,7 +15,7 @@
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.0.4",
   "engines": {
     "node": ">=18"
   }
