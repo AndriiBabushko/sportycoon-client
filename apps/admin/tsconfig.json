@@ -1,26 +1,8 @@
 {
-  "extends": "@sportycoon/typescript-config/nextjs.json",
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@sportycoon/ui": ["./node_modules/@sportycoon/ui"],
-      "@components/*": ["app/components/*"],
-      "@hooks/*": ["app/hooks/*"],
-      "@store/*": ["app/store/*"],
-      "@utils/*": ["app/utils/*"],
-    }
+    "plugins": [{ "name": "next" }]
   },
-  "include": [
-    "next-env.d.ts",
-    "next.config.js",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

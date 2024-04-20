@@ -1,6 +1,0 @@
-{
-  "compilerOptions": {
-      "jsx": "react"
-  },
-  "extends": "@sportycoon/typescript-config/base.json"
-}

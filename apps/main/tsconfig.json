@@ -1,21 +1,14 @@
 {
-  "extends": "@sportycoon/typescript-config/nextjs.json",
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "plugins": [{ "name": "next" }]
   },
   "include": [
     "next-env.d.ts",
-    "next.config.js",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "../../packages/ui/components/ThemeProvider.tsx"
   ],
   "exclude": ["node_modules"]
 }
