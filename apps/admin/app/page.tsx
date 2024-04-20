@@ -1,13 +1,11 @@
 import { FC } from "react";
-import { Button } from "@sportycoon/ui/components/ui/button";
-import { Badge } from "@sportycoon/ui/components/ui/badge";
+import { Badge } from "@sportycoon/ui";
 
 const Home: FC = () => {
   return (
     <div className={"a"}>
       <h1>ADMIN</h1>
-      <Button variant={"secondary"}>White</Button>
-      <Badge variant={"secondary"}>White</Badge>
+      <Badge variant={"outline"}>White</Badge>
     </div>
   );
 };
