@@ -5,7 +5,7 @@ export default function Page() {
     <div className="container flex flex-col gap-5">
       <h1 className="text-red-700">Docs</h1>
       <div>
-        <Button>Hello</Button>
+        <Button rounded={"full"}>Hello</Button>
       </div>
     </div>
   );
