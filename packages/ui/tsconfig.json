@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/react-library.json",
+  "extends": "tsconfig-custom/react-library.json",
   "include": [".", "components/ThemeProvider.tsx"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
