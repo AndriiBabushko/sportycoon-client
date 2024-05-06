@@ -1,6 +1,4 @@
-@import './theme.css';
 @import "@radix-ui/themes/styles.css";
-
 
 @tailwind base;
 @tailwind components;
