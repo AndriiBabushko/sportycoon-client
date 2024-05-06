@@ -13,7 +13,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <Theme appearance={"dark"}>{children}</Theme>
+      <Theme appearance={"light"}>{children}</Theme>
     </ThemeProvider>
   );
 }

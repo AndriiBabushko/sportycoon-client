@@ -7,8 +7,10 @@ import { MyAccordion } from "@/components/ui";
 export const TermsAndConditions: FC = () => {
   return (
     <Flex direction={"column"} gap={"3"} width={"100%"}>
-      <Heading as={"h1"}>Terms and Conditions</Heading>
-      <Text>
+      <Heading as={"h1"} color={"gray"}>
+        Terms and Conditions
+      </Heading>
+      <Text color={"gray"}>
         Welcome to SportyCoon, provided by Sportycoon LLC. These Terms and
         Conditions govern your use of the SportyCoon website, mobile
         application, and related services. By accessing or using the Service,
