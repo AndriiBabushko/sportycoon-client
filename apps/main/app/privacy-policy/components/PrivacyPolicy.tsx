@@ -7,8 +7,10 @@ import { MyAccordion } from "@/components/ui";
 export const PrivacyPolicy: FC = () => {
   return (
     <Flex direction={"column"} gap={"3"} width={"100%"}>
-      <Heading as={"h1"}>Privacy Policy</Heading>
-      <Text>
+      <Heading as={"h1"} color={"gray"}>
+        Privacy Policy
+      </Heading>
+      <Text color={"gray"}>
         SportyCoon is provided by SPORTYCOON LLC, hereinafter referred to as
         &quot;SportyCoon&quot;. This Privacy Policy provides information on how
         we use and protect your data on SportyCoon. By using SportyCoon, you
