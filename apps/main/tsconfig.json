@@ -1,7 +1,12 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "tsconfig-custom/nextjs.json",
   "compilerOptions": {
-    "plugins": [{ "name": "next" }]
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",
@@ -10,5 +15,7 @@
     ".next/types/**/*.ts",
     "../../packages/ui/components/ThemeProvider.tsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
