@@ -1,12 +1,9 @@
-import { Button } from "ui";
+"use server";
 
-export default function Page() {
-  return (
-    <div className="container flex flex-col gap-5">
-      <h1 className="text-red-700">App</h1>
-      <div>
-        <Button>Hello</Button>
-      </div>
-    </div>
-  );
+import { Button } from "ui";
+import React from "react";
+import { Container } from "@radix-ui/themes";
+
+export default async function RootPage() {
+  return <></>;
 }

@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env", "**/.env.development" , "**/.env.production"],
   "globalDotEnv": [".env"],
-  "globalEnv": ["NODE_ENV"],
+  "globalEnv": ["NODE_ENV", "CI"],
   "pipeline": {
     "build": {
       "dotEnv": [".env.production"],
