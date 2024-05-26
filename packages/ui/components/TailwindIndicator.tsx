@@ -1,6 +1,6 @@
-type TailwindIndicatorProps = {
+interface TailwindIndicatorProps {
   isProduction?: boolean;
-};
+}
 
 export function TailwindIndicator({ isProduction }: TailwindIndicatorProps) {
   if (isProduction) return null;
