@@ -1,4 +1,4 @@
-# SportyCoon 
+# SportyCoon
 
 SportyCoon is an cross-platform application to encourage people to do sports and helps to manage it inside simple intuitive app with useful tools, friendly community, suitable
 training programs and other nice stuff.
@@ -11,7 +11,7 @@ This monorepo includes the following packages/apps:
 
 - `docs`: a Storybook app build by React Vite
 - `main`: a client based Next.js app for general users
-- `admin`: a client based Next.js app for administration 
+- `admin`: a client based Next.js app for administration
 
 ### Packages
 
