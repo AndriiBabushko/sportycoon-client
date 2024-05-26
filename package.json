@@ -8,8 +8,9 @@
     "dev": "turbo run dev",
     "dev:admin": "turbo run dev --filter ui --filter admin",
     "dev:main": "turbo run dev --filter ui --filter main",
-    "dev:both": "turbo run dev --filter ui --filter admin --filter main",
     "dev:storybook": "turbo run dev --filter ui --filter docs",
+    "dev:both": "turbo run dev --filter ui --filter admin --filter main",
+    "deps:reinstall": "rm -rf node_modules ./apps/main/node_modules ./apps/docs/node_modules ./apps/admin/node_modules && pnpm i",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
