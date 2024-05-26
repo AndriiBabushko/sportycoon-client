@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig-custom/storybook.json",
+  "extends": "tsconfig/storybook.json",
   "include": [
     "**/*.ts",
     "**/*.tsx",
