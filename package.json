@@ -8,17 +8,32 @@
     "dev": "turbo run dev",
     "dev:admin": "turbo run dev --filter ui --filter admin",
     "dev:main": "turbo run dev --filter ui --filter main",
-    "dev:both": "turbo run dev --filter ui --filter admin --filter main",
     "dev:storybook": "turbo run dev --filter ui --filter docs",
+    "dev:both": "turbo run dev --filter ui --filter admin --filter main",
+    "deps:reinstall": "rm -rf node_modules ./apps/main/node_modules ./apps/docs/node_modules ./apps/admin/node_modules && pnpm i",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
+    "dotenv-cli": "latest",
     "eslint-config-custom": "workspace:*",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.5",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@9.0.4"
+  "packageManager": "pnpm@9.0.4",
+  "lint-staged": {
+    "*.{js, jsx,ts,tsx}": [
+      "eslint --quiet --fix"
+    ],
+    "*.{json,js,ts,jsx,tsx,html}": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
 }
