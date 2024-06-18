@@ -2,10 +2,9 @@
 
 import "ui/styles/globals.css";
 import "@radix-ui/themes/styles.css";
-import { TailwindIndicator, cn, TrainingNav, TRAINING_NAV_HEIGHT } from "ui";
+import { TailwindIndicator, cn, TrainingNav } from "ui";
 import React, { ReactNode } from "react";
 import { Providers } from "./providers";
-import { Container, Box } from "@radix-ui/themes";
 import { usePathname } from "next/navigation";
 
 interface RootLayoutProps {
@@ -27,10 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={cn("min-h-screen")}>
         <Providers>
           <TrainingNav currentRoute={currentRoute} />
-          <Box height={`${TRAINING_NAV_HEIGHT}px`} />
-          <Container size={"4"} className={cn(`pt-[]`)}>
-            {children}
-          </Container>
+          {children}
         </Providers>
         <TailwindIndicator />
       </body>
