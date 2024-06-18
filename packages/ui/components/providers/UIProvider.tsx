@@ -2,10 +2,14 @@
 
 import * as React from "react";
 import { ReactNode } from "react";
-import { Theme } from "@radix-ui/themes";
 import { ThemeProvider } from "next-themes";
+import { NextUIProvider } from "@nextui-org/react";
 
-export function UIProvider({ children }: { children: ReactNode }) {
+interface UIProviderProps {
+  children: ReactNode;
+}
+
+export function UIProvider({ children }: UIProviderProps) {
   return (
     <ThemeProvider
       attribute={"class"}
@@ -13,7 +17,7 @@ export function UIProvider({ children }: { children: ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      <Theme appearance={"light"}>{children}</Theme>
+      <NextUIProvider>{children}</NextUIProvider>
     </ThemeProvider>
   );
 }
