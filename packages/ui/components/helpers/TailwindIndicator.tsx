@@ -1,11 +1,11 @@
-type TailwindIndicatorProps = {
+"use client";
+
+interface TailwindIndicatorProps {
   isProduction?: boolean;
-};
+}
 
 export function TailwindIndicator({ isProduction }: TailwindIndicatorProps) {
   if (isProduction) return null;
-
-  console.log("TailwindIndicator");
 
   return (
     <div className="fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center justify-center rounded-full bg-gray-800 p-3 font-mono text-xs text-white">
