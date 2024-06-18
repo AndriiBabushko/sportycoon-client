@@ -10,7 +10,7 @@
     "dev:main": "turbo run dev --filter ui --filter main",
     "dev:storybook": "turbo run dev --filter ui --filter docs",
     "dev:both": "turbo run dev --filter ui --filter admin --filter main",
-    "deps:reinstall": "rm -rf node_modules ./apps/main/node_modules ./apps/docs/node_modules ./apps/admin/node_modules && pnpm i",
+    "deps:reinstall": "rm -rf node_modules ./apps/main/node_modules ./apps/docs/node_modules ./apps/admin/node_modules ./packages/api/node_modules ./packages/ui/node_modules && pnpm i",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
@@ -21,7 +21,7 @@
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
     "dotenv-cli": "latest",
-    "eslint-config-custom": "workspace:*",
+    "@sportycoon/eslint-config": "workspace:*",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.5",
     "prettier": "^2.5.1",
