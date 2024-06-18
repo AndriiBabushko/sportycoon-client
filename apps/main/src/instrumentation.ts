@@ -1,9 +1,6 @@
 export async function register() {
-  if (process.env.NODE_ENV === "development") {
-    await import("../sentry.client.config");
-  }
-
-  if (process.env.NODE_ENV === "production") {
+  // eslint-disable-next-line turbo/no-undeclared-env-vars
+  if (process.env.NEXT_RUNTIME === "nodejs") {
     await import("../sentry.server.config");
   }
 }

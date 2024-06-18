@@ -1,5 +1,5 @@
 import "ui/styles/globals.css";
-import { TailwindIndicator, cn } from "ui";
+import { TailwindIndicator, cn, UIProvider } from "ui";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -10,9 +10,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={cn("min-h-screen bg-background font-sans antialiased")}>
-        <div className="relative flex min-h-screen flex-col">
-          <div className="flex-1">{children}</div>
-        </div>
+        <UIProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <div className="flex-1">{children}</div>
+          </div>
+        </UIProvider>
         <TailwindIndicator />
       </body>
     </html>
