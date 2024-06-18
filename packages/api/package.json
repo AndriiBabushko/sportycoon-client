@@ -1,0 +1,14 @@
+{
+  "name": "@sportycoon/api",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.10.4",
+    "graphql": "^16.8.1",
+    "graphql-request": "^7.0.1"
+  }
+}
