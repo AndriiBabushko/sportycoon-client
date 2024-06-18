@@ -10,7 +10,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^13.4.1",
+    "@sentry/nextjs": "^8",
+    "next": "^14.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ui": "workspace:*"
@@ -23,7 +24,7 @@
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
-    "tsconfig-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "typescript": "^4.5.3"
   }
 }
