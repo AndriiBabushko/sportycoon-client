@@ -1,14 +1,24 @@
+"use client";
+import { useQuery, SAY_HELLO, ME } from "@sportycoon/api";
 import { Button } from "ui";
 
 export default function Page() {
+  const {
+    data: sayHello,
+    loading: sayHelloLoading,
+    error: sayHelloError,
+  } = useQuery(SAY_HELLO);
   console.log("process.env.SPORTYCOON_API_URL", process.env.SPORTYCOON_API_URL);
   console.log("process.env.CI", process.env.CI);
+
+  if (sayHelloLoading) return <p>Loading...</p>;
+  if (sayHelloError) return <p>Error: {sayHelloError.message}</p>;
 
   return (
     <div className="container flex flex-col gap-5">
       <h1 className="text-red-700">Docs</h1>
       <div>
-        <Button rounded={"full"}>dfdfdfdf</Button>
+        <Button rounded={"full"}>{sayHello.sayHello}</Button>
       </div>
     </div>
   );
