@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { axiosInstance } from "../utils";
+import { axiosInstance } from "../../utils";
 
 export const useGoogleAuth = () => {
   return useQuery<{}, {}, {}>({
