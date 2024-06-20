@@ -1,7 +1,4 @@
-"use client";
-
-import "ui/styles/globals.css";
-import "@radix-ui/themes/styles.css";
+import "@sportycoon/ui/styles/globals.css";
 import { TailwindIndicator, cn, TrainingNav } from "ui";
 import React, { ReactNode } from "react";
 import { Providers } from "./providers";

@@ -1,6 +1,6 @@
 "use client";
-import { useQuery, SAY_HELLO, ME } from "@sportycoon/api";
-import { Button } from "ui";
+import { useQuery, SAY_HELLO } from "@sportycoon/api";
+import { Button } from "@sportycoon/ui";
 
 export default function Page() {
   const {
@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <div className="container flex flex-col gap-5">
-      <h1 className="text-red-700">Docs</h1>
+      <h1 className="text-red-700"></h1>
       <div>
         <Button rounded={"full"}>{sayHello.sayHello}</Button>
       </div>
