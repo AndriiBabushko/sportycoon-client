@@ -10,6 +10,12 @@ module.exports = {
   plugins: [
     {
       rules: {
+        "header-case-start-capital": ({ raw }) => {
+          return [
+            /^[a-z]/.test(raw),
+            "Commit message must start with a lower case letter",
+          ];
+        },
         "header-end-period": ({ header }) => {
           return [/\.$/.test(header), "Commit message must end with a period"];
         },
