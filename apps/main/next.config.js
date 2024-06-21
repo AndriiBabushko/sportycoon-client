@@ -1,6 +1,6 @@
 module.exports = {
   reactStrictMode: true,
-  transpilePackages: ["ui", "tailwind-config"],
+  transpilePackages: ["@sportycoon/ui", "tailwind-config"],
   experimental: {
     serverActions: true,
   },

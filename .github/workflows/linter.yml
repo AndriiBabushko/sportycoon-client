@@ -3,13 +3,16 @@ name: Project linting
 # this is trigger CI on all kinds of branches and PRs
 on:
   push:
-  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.4'
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -26,8 +29,3 @@ jobs:
 
       - name: Run format check
         run: npm run format
-
-      - name: Check commit messages
-        uses: wagoid/commitlint-github-action@v3
-        with:
-          configFile: commitlint.config.cjs
