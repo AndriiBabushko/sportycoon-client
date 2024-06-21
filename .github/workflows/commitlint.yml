@@ -30,7 +30,5 @@ jobs:
           npm --version
           npx commitlint --version
 
-      - name: Check commit messages
-        uses: wagoid/commitlint-github-action@v5
-        with:
-          configFile: commitlint.config.js
+      - name: Validate current commit (last commit) with commitlint
+        run: npx commitlint --from HEAD~1 --to HEAD --verbose
