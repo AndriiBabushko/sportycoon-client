@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ["custom"],
+  extends: ["@sportycoon/eslint-config"],
   settings: {
     next: {
       rootDir: ["apps/*/"],
