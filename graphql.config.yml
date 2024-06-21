@@ -1,0 +1,3 @@
+schema:
+  - https://sportycoon-api.up.railway.app/graphql
+documents: '**/*.graphql'

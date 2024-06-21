@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "@sportycoon/ts-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {
@@ -13,7 +13,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "../../packages/ui/components/ThemeProvider.tsx"
   ],
   "exclude": [
     "node_modules"
