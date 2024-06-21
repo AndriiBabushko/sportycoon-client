@@ -31,6 +31,6 @@ jobs:
           npx commitlint --version
 
       - name: Check commit messages
-        uses: wagoid/commitlint-github-action@v3
+        uses: wagoid/commitlint-github-action@v5
         with:
           configFile: commitlint.config.js
