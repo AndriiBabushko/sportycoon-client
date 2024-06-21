@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9.0.4'
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
