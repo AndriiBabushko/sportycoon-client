@@ -13,8 +13,8 @@ interface RootLayoutProps {
 }
 
 export const metadata: Metadata = {
-  title: "Sportycoon",
-  description: "Sportycoon",
+  title: "Sportycoon Dashboard",
+  description: "",
 };
 
 export default async function RootLayout({

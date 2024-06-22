@@ -14,6 +14,7 @@
       "dependsOn": ["^lint"]
     },
     "dev": {
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
       "inputs": ["**/.env", "**/.env.development"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
     }

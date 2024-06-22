@@ -4,8 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --port 3000",
-    "build": "next build",
+    "dev": "dotenv -e .env -- next dev --port 3000",
+    "build": "dotenv -e .env.production -- next build",
     "start": "next start",
     "lint": "next lint"
   },
