@@ -10,6 +10,7 @@ export default function Page() {
   } = useQuery(SAY_HELLO);
   console.log("process.env.SPORTYCOON_API_URL", process.env.SPORTYCOON_API_URL);
   console.log("process.env.CI", process.env.CI);
+  console.log("process.env.NODE_ENV", process.env.NODE_ENV);
 
   if (sayHelloLoading) return <p>Loading...</p>;
   if (sayHelloError) return <p>Error: {sayHelloError.message}</p>;
