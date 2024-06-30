@@ -1,14 +1,16 @@
-import * as React from "react";
+import React, { forwardRef, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
-import { FC } from "react";
+import {
+  Button as ChakraButton,
+  ButtonProps as ChakraButtonProps,
+} from "@chakra-ui/react";
+import { cn } from "@/lib";
 
 const Classes = {
   default:
-    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
+    "items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
-  variant: {
+  buttonStyle: {
     primary: "bg-gray-700 text-gray-100 hover:bg-gray-900",
     "outline-primary":
       "text-gray-700 border border-gray-700 hover:bg-gray-900 hover:text-gray-100",
@@ -18,12 +20,6 @@ const Classes = {
     "ghost-primary": "hover:bg-gray-900 hover:text-gray-100",
     "ghost-secondary": "text-gray-50 hover:bg-gray-100 hover:text-gray-900",
     link: "underline-offset-4 hover:underline text-primary",
-  },
-  size: {
-    default: "h-10 py-2 px-4",
-    sm: "h-9 px-3",
-    lg: "h-11 px-8",
-    icon: "h-10 w-10 px-2",
   },
   rounded: {
     default: "rounded-md",
@@ -41,43 +37,39 @@ const Classes = {
 
 const buttonVariants = cva(Classes.default, {
   variants: {
-    variant: Classes.variant,
-    size: Classes.size,
-    rounded: Classes.rounded,
+    buttonStyle: Classes.buttonStyle,
     fullWidth: Classes.fullWidth,
   },
   defaultVariants: {
-    variant: "primary",
-    size: "default",
-    rounded: "default",
+    buttonStyle: "primary",
     fullWidth: false,
   },
 });
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ChakraButtonProps,
     VariantProps<typeof buttonVariants> {
+  children: ReactNode;
+  className?: string;
   asChild?: boolean;
 }
 
-const Button: FC<ButtonProps> = ({
-  className,
-  variant,
-  size,
-  rounded,
-  fullWidth,
-  asChild = false,
-  ...props
-}) => {
-  return (
-    <button
-      className={cn(
-        buttonVariants({ variant, size, rounded, fullWidth, className })
-      )}
-      {...props}
-    />
-  );
-};
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    { className, buttonStyle, rounded, fullWidth, asChild = false, ...props },
+    ref
+  ) => {
+    return (
+      <ChakraButton
+        ref={ref}
+        className={cn(buttonVariants({ buttonStyle, fullWidth, className }))}
+        {...props}
+      >
+        {props.children}
+      </ChakraButton>
+    );
+  }
+);
 
 Button.displayName = "Button";
 

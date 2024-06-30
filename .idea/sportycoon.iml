@@ -11,5 +11,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/react" level="application" />
     <orderEntry type="library" name="@radix-ui/colors" level="application" />
+    <orderEntry type="library" name="nicomoji" level="application" />
   </component>
 </module>
