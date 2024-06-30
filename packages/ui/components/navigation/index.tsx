@@ -1,1 +1,1 @@
-export * from "./TrainingNav";
+export * from "./AdminNav";

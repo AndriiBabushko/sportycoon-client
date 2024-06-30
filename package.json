@@ -19,7 +19,7 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@sportycoon/eslint-config": "workspace:*",
-    "@turbo/gen": "^1.9.7",
+    "@turbo/gen": "latest",
     "dotenv-cli": "latest",
     "eslint": "^7.32.0",
     "husky": "^8.0.0",
