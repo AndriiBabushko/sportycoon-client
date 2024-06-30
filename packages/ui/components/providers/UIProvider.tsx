@@ -1,15 +1,15 @@
 "use client";
 
+import { ChakraProvider } from "@chakra-ui/react";
 import * as React from "react";
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
-import { NextUIProvider } from "@nextui-org/react";
 
 interface UIProviderProps {
   children: ReactNode;
 }
 
-export function UIProvider({ children }: UIProviderProps) {
+export const UIProvider: FC<UIProviderProps> = ({ children }) => {
   return (
     <ThemeProvider
       attribute={"class"}
@@ -17,7 +17,7 @@ export function UIProvider({ children }: UIProviderProps) {
       enableSystem
       disableTransitionOnChange
     >
-      <NextUIProvider>{children}</NextUIProvider>
+      <ChakraProvider>{children}</ChakraProvider>
     </ThemeProvider>
   );
-}
+};

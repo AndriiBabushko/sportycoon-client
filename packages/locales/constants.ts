@@ -1,2 +1,2 @@
-export const LOCALES = ["en", "ua"];
-export const DEFAULT_LOCALE = "en";
+export const LOCALES = ["en", "ua"] as const;
+export const DEFAULT_LOCALE = "en" as const;

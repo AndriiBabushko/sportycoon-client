@@ -4,6 +4,8 @@ import APIProvider from "@sportycoon/api";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
+import Head from "next/head";
+import { fonts } from "@sportycoon/fonts";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -24,9 +26,26 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <head />
-      <body className={cn("min-h-screen bg-background font-sans antialiased")}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+      className={`${fonts.montserrat.variable} ${fonts.nicoMoji.variable}`}
+    >
+      <Head>
+        <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />
+        <link
+          rel={"preconnect"}
+          href={"https://fonts.gstatic.com"}
+          crossOrigin={"anonymous"}
+        />
+        <link
+          href={"https://fonts.googleapis.com/earlyaccess/nicomoji.css"}
+          rel="stylesheet"
+        />
+      </Head>
+      <body
+        className={cn(["min-h-screen bg-background font-sans antialiased"])}
+      >
         <NextIntlClientProvider messages={messages}>
           <APIProvider>
             <UIProvider>

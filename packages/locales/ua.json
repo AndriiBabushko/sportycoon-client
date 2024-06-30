@@ -1,5 +1,13 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "login": {
+    "emailPlaceholder": "Введіть вашу електронну пошту",
+    "passwordPlaceholder": "Введіть ваш пароль"
+  },
+  "register": {
+    "title": "Реєстрація"
+  },
+  "errors": {
+    "invalidEmail": "Невірна електронна пошта",
+    "passwordTooShort": "Пароль занадто короткий"
   }
 }
