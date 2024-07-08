@@ -17,6 +17,11 @@
       "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
       "inputs": ["**/.env", "**/.env.development"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
+    },
+    "prod": {
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+      "inputs": ["**/.env", "**/.env.production"],
+      "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
     }
   }
 }

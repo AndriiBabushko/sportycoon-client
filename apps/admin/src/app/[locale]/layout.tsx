@@ -1,10 +1,8 @@
 import "@sportycoon/ui/styles/globals.css";
 import { TailwindIndicator, cn, UIProvider } from "@sportycoon/ui";
 import APIProvider from "@sportycoon/api";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, NextIntlClientProvider } from "@sportycoon/locales";
 import type { Metadata } from "next";
-import Head from "next/head";
 import { fonts } from "@sportycoon/fonts";
 
 interface RootLayoutProps {
@@ -31,18 +29,18 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${fonts.montserrat.variable} ${fonts.nicoMoji.variable}`}
     >
-      <Head>
-        <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />
-        <link
-          rel={"preconnect"}
-          href={"https://fonts.gstatic.com"}
-          crossOrigin={"anonymous"}
-        />
-        <link
-          href={"https://fonts.googleapis.com/earlyaccess/nicomoji.css"}
-          rel="stylesheet"
-        />
-      </Head>
+      {/*<Head>*/}
+      {/*  <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />*/}
+      {/*  <link*/}
+      {/*    rel={"preconnect"}*/}
+      {/*    href={"https://fonts.gstatic.com"}*/}
+      {/*    crossOrigin={"anonymous"}*/}
+      {/*  />*/}
+      {/*  <link*/}
+      {/*    href={"https://fonts.googleapis.com/earlyaccess/nicomoji.css"}*/}
+      {/*    rel="stylesheet"*/}
+      {/*  />*/}
+      {/*</Head>*/}
       <body
         className={cn(["min-h-screen bg-background font-sans antialiased"])}
       >
@@ -55,7 +53,9 @@ export default async function RootLayout({
             </UIProvider>
           </APIProvider>
         </NextIntlClientProvider>
-        <TailwindIndicator />
+        <TailwindIndicator
+          isProduction={process.env.NODE_ENV === "production"}
+        />
       </body>
     </html>
   );

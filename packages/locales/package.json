@@ -2,18 +2,23 @@
   "name": "@sportycoon/locales",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "./index.ts",
-  "types": "./index.ts",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint \"**/*.ts*\""
   },
   "dependencies": {
-    "next-intl": "^3.15.2"
+    "next-intl": "^3.15.2",
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
     "@sportycoon/eslint-config": "workspace:*",
     "@sportycoon/ts-config": "workspace:*",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "@types/react": "^18.2.0"
   }
 }
