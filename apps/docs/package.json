@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 3003",
+    "prod": "storybook dev -p 3003",
     "build": "storybook build"
   },
   "dependencies": {

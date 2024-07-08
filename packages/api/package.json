@@ -10,7 +10,8 @@
   },
   "scripts": {
     "build": "graphql-codegen",
-    "dev": "pnpm run build && graphql-codegen -w"
+    "dev": "pnpm run build && graphql-codegen -w",
+    "prod": "pnpm run build && graphql-codegen -w"
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",

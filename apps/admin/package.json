@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "dotenv -e .env -- next dev --port 3000",
+    "prod": "dotenv -e .env.production -- next dev --port 4000",
     "build": "dotenv -e .env.production -- next build",
     "start": "next start",
     "lint": "next lint"

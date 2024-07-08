@@ -8,8 +8,8 @@ import {
   TLoginSchema,
   zodResolver,
 } from "@sportycoon/validation";
-import { useTranslations } from "next-intl";
 import { Button, Input } from "@sportycoon/ui";
+import { useTranslations } from "@sportycoon/locales";
 
 export function LoginForm() {
   const translateLogin = useTranslations("login");

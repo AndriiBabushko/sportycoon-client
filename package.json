@@ -6,7 +6,8 @@
   "scripts": {
     "build": "dotenv -- turbo run build",
     "dev": "dotenv -- turbo run dev",
-    "dev:admin": "dotenv -- turbo run dev --filter @sportycoon/ui --filter admin --filter @sportycoon/api",
+    "dev:admin:dev": "dotenv -- turbo run dev --filter @sportycoon/ui --filter admin --filter @sportycoon/api",
+    "dev:admin:prod": "dotenv -- turbo run prod --filter @sportycoon/ui --filter admin --filter @sportycoon/api",
     "dev:main": "dotenv -- turbo run dev --filter @sportycoon/ui --filter main --filter @sportycoon/api",
     "dev:storybook": "dotenv -- turbo run dev --filter @sportycoon/ui --filter docs --filter @sportycoon/api",
     "dev:both": "dotenv -- turbo run dev --filter @sportycoon/ui --filter admin --filter main --filter @sportycoon/api",
