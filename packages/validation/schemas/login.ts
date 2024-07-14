@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { TranslationFunction } from "@/types";
+import { TranslationFunction } from "../types";
 
 export const LOGIN_SCHEMA = {
   EMAIl: "email",

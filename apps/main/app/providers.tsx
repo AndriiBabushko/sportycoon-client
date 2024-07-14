@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-import { UIProvider } from "@/components/providers";
+import { ThemeProvider } from "@/components/providers";
 
 export function Providers({ children }: { children: ReactNode }) {
-  return <UIProvider>{children}</UIProvider>;
+  return <ThemeProvider>{children}</ThemeProvider>;
 }

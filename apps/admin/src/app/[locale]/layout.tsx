@@ -1,5 +1,5 @@
 import "@sportycoon/ui/styles/globals.css";
-import { TailwindIndicator, cn, UIProvider } from "@sportycoon/ui";
+import { TailwindIndicator, cn, ThemeProvider } from "@sportycoon/ui";
 import APIProvider from "@sportycoon/api";
 import { getMessages, NextIntlClientProvider } from "@sportycoon/locales";
 import type { Metadata } from "next";
@@ -46,11 +46,11 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <APIProvider>
-            <UIProvider>
+            <ThemeProvider>
               <div className="relative flex min-h-screen flex-col">
                 <div className="flex-1">{children}</div>
               </div>
-            </UIProvider>
+            </ThemeProvider>
           </APIProvider>
         </NextIntlClientProvider>
         <TailwindIndicator

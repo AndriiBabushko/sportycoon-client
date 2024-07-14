@@ -12,8 +12,7 @@ export const ThemeToggle: FC = () => {
 
   return (
     <Button
-      variant="ghost-primary"
-      size="sm"
+      buttonStyle={"ghost-primary"}
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
       <>

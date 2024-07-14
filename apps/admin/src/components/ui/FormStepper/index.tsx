@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Box,
   Step,
   StepDescription,
   StepIcon,
@@ -12,9 +11,10 @@ import {
   StepTitle,
   Stepper,
   useSteps,
-} from "@chakra-ui/react";
+} from "@chakra-ui/stepper";
 import { ReactNode, useCallback } from "react";
-import { Button } from "@/components/common";
+import { Button } from "@sportycoon/ui";
+import { Box } from "@chakra-ui/layout";
 
 interface Step {
   renderComponent: ReactNode;
@@ -32,7 +32,10 @@ export function FormStepper({ steps }: Props) {
     count: steps.length,
   });
 
-  const handleNext = useCallback(() => setActiveStep((prev) => prev + 1), []);
+  const handleNext = useCallback(
+    () => setActiveStep((prev) => prev + 1),
+    [setActiveStep]
+  );
   const handlePrevious = useCallback(
     () => setActiveStep((prev) => prev - 1),
     [setActiveStep]
@@ -64,13 +67,10 @@ export function FormStepper({ steps }: Props) {
       <Box mt={8}>{steps[activeStep].renderComponent}</Box>
 
       <Box mt={4} display="flex" justifyContent="space-between">
-        <Button isDisabled={activeStep === 0} onClick={handlePrevious}>
+        <Button disabled={activeStep === 0} onClick={handlePrevious}>
           Previous
         </Button>
-        <Button
-          onClick={handleNext}
-          isDisabled={activeStep === steps.length - 1}
-        >
+        <Button onClick={handleNext} disabled={activeStep === steps.length - 1}>
           Next
         </Button>
       </Box>

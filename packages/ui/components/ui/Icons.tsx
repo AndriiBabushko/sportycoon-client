@@ -1,14 +1,14 @@
 import {
   LucideProps,
   Moon,
-  SunMedium,
+  Sun,
   Twitter,
   ArrowBigDown,
   Menu,
 } from "lucide-react";
 
 export const Icons = {
-  Sun: SunMedium,
+  Sun: Sun,
   Moon: Moon,
   Twitter: Twitter,
   ArrowBigDown: ArrowBigDown,
