@@ -1,10 +1,6 @@
-import React, { ReactNode, FC } from "react";
-import {
-  Text as ChakraText,
-  TextProps as ChakraTextProps,
-} from "@chakra-ui/react";
+import React, { ReactNode, FC, HTMLAttributes } from "react";
 import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib";
 
 const Classes = {
   default: "font-normal",
@@ -25,7 +21,7 @@ const textVariants = cva(Classes.default, {
 });
 
 export interface TextProps
-  extends ChakraTextProps,
+  extends HTMLAttributes<HTMLParagraphElement>,
     VariantProps<typeof textVariants> {
   children: ReactNode;
 }
@@ -33,18 +29,14 @@ export interface TextProps
 const Text: FC<TextProps> = ({
   className,
   textVariant,
-  size,
   color,
   children,
   ...props
 }) => {
   return (
-    <ChakraText
-      className={cn(textVariants({ textVariant, className }))}
-      {...props}
-    >
+    <p className={cn(textVariants({ textVariant, className }))} {...props}>
       {children}
-    </ChakraText>
+    </p>
   );
 };
 

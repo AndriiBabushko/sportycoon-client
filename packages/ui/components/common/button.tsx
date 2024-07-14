@@ -1,10 +1,7 @@
-import React, { forwardRef, ReactNode } from "react";
+import React, { ReactNode, ButtonHTMLAttributes, forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import {
-  Button as ChakraButton,
-  ButtonProps as ChakraButtonProps,
-} from "@chakra-ui/react";
 import { cn } from "@/lib";
+import { Slot } from "@radix-ui/react-slot";
 
 const Classes = {
   default:
@@ -39,6 +36,7 @@ const buttonVariants = cva(Classes.default, {
   variants: {
     buttonStyle: Classes.buttonStyle,
     fullWidth: Classes.fullWidth,
+    rounded: Classes.rounded,
   },
   defaultVariants: {
     buttonStyle: "primary",
@@ -47,7 +45,7 @@ const buttonVariants = cva(Classes.default, {
 });
 
 export interface ButtonProps
-  extends ChakraButtonProps,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   children: ReactNode;
   className?: string;
@@ -59,14 +57,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     { className, buttonStyle, rounded, fullWidth, asChild = false, ...props },
     ref
   ) => {
+    const Comp = asChild ? Slot : "button";
+
     return (
-      <ChakraButton
+      <button
         ref={ref}
-        className={cn(buttonVariants({ buttonStyle, fullWidth, className }))}
+        className={cn(
+          buttonVariants({ buttonStyle, fullWidth, className, rounded })
+        )}
         {...props}
       >
         {props.children}
-      </ChakraButton>
+      </button>
     );
   }
 );

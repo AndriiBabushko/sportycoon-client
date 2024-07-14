@@ -42,7 +42,9 @@ export function LoginForm() {
           type={"password"}
           placeholder={translateLogin("passwordPlaceholder")}
         />
-        <Button>{translateLogin("loginButtonCaption")}</Button>
+        <Button onClick={handleSubmit(onSubmit)}>
+          {translateLogin("loginButtonCaption")}
+        </Button>
       </form>
     </div>
   );

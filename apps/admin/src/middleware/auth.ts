@@ -10,8 +10,8 @@ const ignoredPaths = ["/", "/account/login", "/account/register"];
 
 export function withAuthMiddleware(middleware: NextMiddleware) {
   return async (req: NextRequest, event: NextFetchEvent) => {
-    const { cookies, nextUrl } = req;
-    const token = cookies["auth-token"];
+    const { nextUrl, headers } = req;
+    const token = headers["authorization"];
     const locale = nextUrl.locale || "en";
     const path = nextUrl.pathname;
 
