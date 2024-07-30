@@ -1,11 +1,12 @@
 import { z } from "zod";
-import { TranslationFunction } from "../types";
+import type { TranslationFunction } from "../types";
 
 export const LOGIN_SCHEMA = {
   EMAIl: "email",
   PASSWORD: "password",
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const getLoginSchema = (t: TranslationFunction) => {
   return z.object({
     [LOGIN_SCHEMA.EMAIl]: z.string().email(t("errors.invalidEmail")),

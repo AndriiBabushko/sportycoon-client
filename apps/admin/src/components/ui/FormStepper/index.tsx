@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  Step,
+  Step as ChakraStep,
   StepDescription,
   StepIcon,
   StepIndicator,
@@ -12,45 +12,45 @@ import {
   Stepper,
   useSteps,
 } from "@chakra-ui/stepper";
-import { ReactNode, useCallback } from "react";
+import { useCallback } from "react";
+import type { JSX, ReactNode } from "react";
 import { Button } from "@sportycoon/ui";
 import { Box } from "@chakra-ui/layout";
 
 interface Step {
+  id: string;
   renderComponent: ReactNode;
   title: string;
   description: string;
 }
 
-interface Props {
+interface FormStepperProps {
   steps: Step[];
 }
 
-export function FormStepper({ steps }: Props) {
+export function FormStepper({ steps }: FormStepperProps): JSX.Element {
   const { activeStep, setActiveStep } = useSteps({
     index: 0,
     count: steps.length,
   });
 
-  const handleNext = useCallback(
-    () => setActiveStep((prev) => prev + 1),
-    [setActiveStep]
-  );
-  const handlePrevious = useCallback(
-    () => setActiveStep((prev) => prev - 1),
-    [setActiveStep]
-  );
+  const handleNext = useCallback(() => {
+    setActiveStep((prev) => prev + 1);
+  }, [setActiveStep]);
+  const handlePrevious = useCallback(() => {
+    setActiveStep((prev) => prev - 1);
+  }, [setActiveStep]);
 
   return (
     <Box>
       <Stepper index={activeStep}>
-        {steps.map((step, index) => (
-          <Step key={index}>
+        {steps.map((step) => (
+          <ChakraStep key={step.id}>
             <StepIndicator>
               <StepStatus
+                active={<StepNumber />}
                 complete={<StepIcon />}
                 incomplete={<StepNumber />}
-                active={<StepNumber />}
               />
             </StepIndicator>
 
@@ -60,17 +60,17 @@ export function FormStepper({ steps }: Props) {
             </Box>
 
             <StepSeparator />
-          </Step>
+          </ChakraStep>
         ))}
       </Stepper>
 
       <Box mt={8}>{steps[activeStep].renderComponent}</Box>
 
-      <Box mt={4} display="flex" justifyContent="space-between">
+      <Box display="flex" justifyContent="space-between" mt={4}>
         <Button disabled={activeStep === 0} onClick={handlePrevious}>
           Previous
         </Button>
-        <Button onClick={handleNext} disabled={activeStep === steps.length - 1}>
+        <Button disabled={activeStep === steps.length - 1} onClick={handleNext}>
           Next
         </Button>
       </Box>

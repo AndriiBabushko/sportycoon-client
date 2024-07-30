@@ -3,6 +3,7 @@
   "display": "Next.js",
   "extends": "./base.json",
   "compilerOptions": {
+    "strict": true,
     "allowJs": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,8 +18,7 @@
     "module": "esnext",
     "noEmit": true,
     "resolveJsonModule": true,
-    "strict": false,
-    "target": "es5",
+    "target": "es6",
     "baseUrl": ".",
     "paths": {
       "@/*": ["../../packages/ui/*"],

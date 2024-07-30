@@ -4,6 +4,8 @@ import APIProvider from "@sportycoon/api";
 import { getMessages, NextIntlClientProvider } from "@sportycoon/locales";
 import type { Metadata } from "next";
 import { fonts } from "@sportycoon/fonts";
+import { ChakraProvider } from "@chakra-ui/provider";
+import type { JSX } from "react";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -20,14 +22,14 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   params: { locale },
-}: Readonly<RootLayoutProps>) {
+}: Readonly<RootLayoutProps>): Promise<JSX.Element> {
   const messages = await getMessages();
 
   return (
     <html
+      className={`${fonts.montserrat.variable} ${fonts.nicoMoji.variable}`}
       lang={locale}
       suppressHydrationWarning
-      className={`${fonts.montserrat.variable} ${fonts.nicoMoji.variable}`}
     >
       {/*<Head>*/}
       {/*  <link rel={"preconnect"} href={"https://fonts.googleapis.com"} />*/}
@@ -42,14 +44,21 @@ export default async function RootLayout({
       {/*  />*/}
       {/*</Head>*/}
       <body
-        className={cn(["min-h-screen bg-background font-sans antialiased"])}
+        className={cn(
+          "min-h-screen",
+          "bg-background",
+          "font-sans",
+          "antialiased",
+        )}
       >
         <NextIntlClientProvider messages={messages}>
           <APIProvider>
             <ThemeProvider>
-              <div className="relative flex min-h-screen flex-col">
-                <div className="flex-1">{children}</div>
-              </div>
+              <ChakraProvider>
+                <div className="relative flex min-h-screen flex-col">
+                  <div className="flex-1">{children}</div>
+                </div>
+              </ChakraProvider>
             </ThemeProvider>
           </APIProvider>
         </NextIntlClientProvider>

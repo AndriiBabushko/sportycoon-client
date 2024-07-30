@@ -1,5 +1,7 @@
-import React, { ReactNode, FC, HTMLAttributes } from "react";
-import { cva, VariantProps } from "class-variance-authority";
+import type { ReactNode, HTMLAttributes, JSX } from "react";
+import React from "react";
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "@/lib";
 
 const Classes = {
@@ -26,19 +28,18 @@ export interface TextProps
   children: ReactNode;
 }
 
-const Text: FC<TextProps> = ({
+function Text({
   className,
   textVariant,
-  color,
   children,
   ...props
-}) => {
+}: TextProps): JSX.Element {
   return (
     <p className={cn(textVariants({ textVariant, className }))} {...props}>
       {children}
     </p>
   );
-};
+}
 
 Text.displayName = "Text";
 

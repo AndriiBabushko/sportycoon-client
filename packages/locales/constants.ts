@@ -1,4 +1,2 @@
-export const LOCALES = ["en", "ua"] as const;
+export const LOCALES = ["en", "ua"];
 export const DEFAULT_LOCALE = "en" as const;
-
-export enum TRANSLATIONS {}
