@@ -13,9 +13,8 @@ export const useGoogleAuth = () => {
   >({
     queryKey: ["google-auth"],
     queryFn: async () => {
-      const { data } = await axiosInstance.get<GoogleAuthResponse>(
-        "/auth/google"
-      );
+      const { data } =
+        await axiosInstance.get<GoogleAuthResponse>("/auth/google");
       return data;
     },
   });
