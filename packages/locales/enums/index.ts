@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-shadow */
+
 export enum LOGIN {
   TITLE = "TITLE",
   EMAIL_PLACEHOLDER = "EMAIL_PLACEHOLDER",
@@ -15,4 +17,9 @@ export enum REGISTER {
 export enum ERRORS {
   INVALID_EMAIL = "INVALID_EMAIL",
   PASSWORD_TOO_SHORT = "PASSWORD_TOO_SHORT",
+}
+export enum TRANSLATES_NAMESPACES {
+  LOGIN = "LOGIN",
+  REGISTER = "REGISTER",
+  ERRORS = "ERRORS",
 }

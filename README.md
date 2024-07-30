@@ -34,7 +34,7 @@ This monorepo has some additional tools already setup:
 To build all apps and packages, run the following command:
 
 ```
-pnpm build
+yarn build
 ```
 
 ### Develop
@@ -42,7 +42,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```
-pnpm dev
+yarn dev
 ```
 
 ## License

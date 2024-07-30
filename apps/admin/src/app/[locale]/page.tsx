@@ -1,9 +1,6 @@
-import { useTranslations } from "@sportycoon/locales";
+import type { JSX } from "react";
 
-export default function Root() {
-  const t = useTranslations();
-
-  console.log(t("login.title"));
+export default function Root(): JSX.Element {
   return (
     <div className="container flex flex-col gap-5">
       {/*<FormStepper*/}
