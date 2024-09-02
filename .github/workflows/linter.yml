@@ -1,6 +1,5 @@
 name: Project linting
 
-# this is trigger CI on all kinds of branches and PRs
 on:
   push:
 
