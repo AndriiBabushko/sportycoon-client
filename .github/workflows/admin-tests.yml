@@ -1,0 +1,29 @@
+name: Admin Tests
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache
+
+      - name: Install playwright chromium
+        run: npx playwright install chromium
+
+      - name: Build admin
+        run: yarn run build:admin
+
+      - name: Run admin tests
+        run: yarn run ci:admin
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+

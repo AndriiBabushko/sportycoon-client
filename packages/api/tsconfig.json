@@ -1,0 +1,8 @@
+{
+  "extends": "@sportycoon/ts-config/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+  }
+}

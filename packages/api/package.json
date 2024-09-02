@@ -3,12 +3,33 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "lint": "eslint .",
+    "build": "graphql-codegen",
+    "dev": "yarn build && graphql-codegen -w",
+    "prod": "yarn build && graphql-codegen -w"
+  },
   "dependencies": {
     "@apollo/client": "^3.10.4",
+    "@parcel/watcher": "^2.4.1",
+    "@tanstack/react-query": "^5.45.1",
+    "axios": "^1.7.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.3.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@sportycoon/eslint-config": "*",
+    "@sportycoon/ts-config": "*",
+    "@types/react": "^18.2.0",
+    "eslint": "^8.38.0",
     "graphql": "^16.8.1",
-    "graphql-request": "^7.0.1"
+    "typescript": "5.3.3"
   }
 }

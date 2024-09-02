@@ -1,11 +1,11 @@
-export async function register() {
-  // eslint-disable-next-line turbo/no-undeclared-env-vars
-  if (process.env.NEXT_RUNTIME !== "nodejs") {
-    return;
-  }
+/* eslint-disable -- Disable file due to certain Sentry config */
 
-  // eslint-disable-next-line turbo/no-undeclared-env-vars
+export async function register() {
   if (process.env.NEXT_RUNTIME === "nodejs") {
     await import("../sentry.server.config");
+  }
+
+  if (process.env.NEXT_RUNTIME === "edge") {
+    await import("../sentry.edge.config");
   }
 }

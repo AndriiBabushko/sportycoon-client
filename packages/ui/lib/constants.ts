@@ -1,9 +1,16 @@
-export const TRAINING_NAV_HEIGHT = 100 as const;
+export enum AdminPages {
+  ROOT = "/",
+  LOGIN = "/account/login",
+  REGISTER = "/account/register",
+  ACCOUNT = "/account",
+  DASHBOARD = "/dashboard",
+}
 
-export const TRAINING_NAV_ITEMS = [
-  { label: "Training", href: "/training" },
-  { label: "Shop", href: "/shop" },
-  { label: "Blog", href: "/blog" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms and Conditions", href: "/terms-and-conditions" },
-] as const;
+// export enum CLIENT_PAGES {
+//   ROOT = "/",
+//   LOGIN = "/account/login",
+//   REGISTER = "/account/register",
+//   ACCOUNT = "/account",
+//   SHOP = "/shop",
+//   TRAINING = "/training",
+// }

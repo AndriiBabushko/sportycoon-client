@@ -28,6 +28,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env.production
 
 # turbo
 .turbo
@@ -35,3 +36,4 @@ yarn-error.log*
 # vercel
 .vercel
 /apps/main/.idea/workspace.xml
+__generated__

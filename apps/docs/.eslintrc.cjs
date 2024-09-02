@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: ["custom", "plugin:storybook/recommended"],
+  extends: ["@sportycoon/eslint-config/react.js", "plugin:storybook/recommended"],
 };
