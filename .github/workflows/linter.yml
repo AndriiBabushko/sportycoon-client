@@ -19,5 +19,8 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable --immutable-cache
 
+      - name: Generate GraphQL
+        run: turbo run build --filter @sportycoon/api
+
       - name: Run lint
         run: yarn run lint
