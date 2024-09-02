@@ -1,33 +1,44 @@
 {
-  "name": "admin",
+  "name": "@sportycoon/admin",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --port 3000",
-    "build": "next build",
+    "dev": "dotenv -e .env -- next dev --port 3000",
+    "prod": "dotenv -e .env.production -- next dev --port 4000",
+    "build": "dotenv -e .env.production -- next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/form-control": "^2.2.0",
+    "@chakra-ui/layout": "^2.3.1",
+    "@chakra-ui/provider": "^2.4.2",
+    "@chakra-ui/stepper": "^2.3.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@sentry/nextjs": "^8.4.0",
-    "@sportycoon/api": "workspace:*",
-    "@sportycoon/locales": "workspace:*",
-    "@sportycoon/ui": "workspace:*",
+    "@sportycoon/api": "*",
+    "@sportycoon/fonts": "*",
+    "@sportycoon/locales": "*",
+    "@sportycoon/ui": "*",
+    "@sportycoon/validation": "*",
+    "framer-motion": "^11.3.2",
     "next": "^14.2.3",
-    "next-intl": "^3.15.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.52.0"
   },
   "devDependencies": {
-    "@sportycoon/eslint-config": "workspace:*",
-    "@sportycoon/ts-config": "workspace:*",
+    "@sportycoon/eslint-config": "*",
+    "@sportycoon/ts-config": "*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^4.5.2"
+    "tailwindcss": "^3.4.4",
+    "eslint": "^8.38.0",
+    "typescript": "5.3.3"
   }
 }

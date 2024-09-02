@@ -1,0 +1,21 @@
+{
+  "name": "@sportycoon/tests",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev:test": "playwright test",
+    "e2e:test:admin": "start-server-and-test \"(cd ../../apps/admin && yarn run start)\" http://localhost:3000 \"playwright test\""
+  },
+  "dependencies": {
+    "start-server-and-test": "^2.0.5",
+    "@sportycoon/admin": "*",
+    "@sportycoon/ui": "*",
+    "@sportycoon/api": "*"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@sportycoon/ts-config": "*",
+    "@sportycoon/eslint-config": "*"
+  }
+}

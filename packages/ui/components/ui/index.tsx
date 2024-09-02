@@ -1,3 +1,2 @@
-export * from "./ThemeToggle";
-export * from "./Icons";
-export * from "./ShopCard";
+export * from "./theme-toggle";
+export * from "./icons";
