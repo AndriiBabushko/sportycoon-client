@@ -16,7 +16,7 @@
     "remove:turbo": "rm -rf .turbo ./apps/main/.turbo ./apps/docs/.turbo ./apps/admin/.turbo ./packages/api/.turbo ./packages/ui/.turbo",
     "remove:node_modules": "rm -rf node_modules ./apps/main/node_modules ./apps/docs/node_modules ./apps/admin/node_modules ./packages/api/node_modules ./packages/ui/node_modules",
     "deps:reinstall": "yarn remove:turbo && yarn remove:node_modules && yarn install",
-    "lint": "turbo run lint",
+    "lint": "dotenv -- turbo run build --filter @sportycoon/api lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install"
   },
