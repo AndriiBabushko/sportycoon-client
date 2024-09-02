@@ -1,0 +1,16 @@
+{
+  "name": "@sportycoon/fonts",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "@sportycoon/eslint-config": "*",
+    "@sportycoon/ts-config": "*",
+    "eslint": "^8.38.0",
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@next/font": "^14.2.4"
+  }
+}
