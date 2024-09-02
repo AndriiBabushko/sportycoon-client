@@ -1,4 +1,4 @@
-name: CI
+name: Admin Tests
 
 on: push
 
@@ -13,7 +13,7 @@ jobs:
       - run: yarn install --immutable --immutable-cache
       - run: npx playwright install chromium
       - run: yarn run build:admin
-      - run: yarn run ci
+      - run: yarn run ci:admin
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
