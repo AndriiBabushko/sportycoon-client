@@ -24,12 +24,13 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
-    "@sportycoon/locales": "*",
     "@radix-ui/react-slot": "^1.1.0",
+    "@sportycoon/locales": "*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.403.0",
     "next-themes": "^0.3.0",
+    "react-toastify": "^10.0.5",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   }

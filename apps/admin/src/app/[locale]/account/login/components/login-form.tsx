@@ -11,6 +11,7 @@ import {
   zodResolver,
 } from "@sportycoon/validation";
 import { Button, Input } from "@sportycoon/ui";
+import { LOGIN as LOGIN_GQL, useMutation } from "@sportycoon/api";
 import {
   LOGIN,
   TRANSLATES_NAMESPACES,
@@ -19,16 +20,30 @@ import {
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 
 export function LoginForm(): JSX.Element {
+  const [login] = useMutation(LOGIN_GQL);
   const translate = useTranslations(TRANSLATES_NAMESPACES.LOGIN);
-
   const { register, handleSubmit } = useForm<TLoginSchema>({
     resolver: zodResolver(getLoginSchema(translate)),
     mode: "onSubmit",
   });
 
-  const onSubmit: SubmitHandler<TLoginSchema> = useCallback((data) => {
-    console.log(data);
-  }, []);
+  const onSubmit: SubmitHandler<TLoginSchema> = useCallback(
+    async ({ email, password }) => {
+      const response = await login({
+        variables: {
+          input: {
+            email,
+            password,
+          },
+        },
+      });
+
+      if (response.data?.login.access_token) {
+        // Handle successful login
+      }
+    },
+    [login]
+  );
 
   return (
     <div className="container flex flex-col gap-5">

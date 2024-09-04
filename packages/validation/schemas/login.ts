@@ -1,10 +1,10 @@
 import { z } from "zod";
 import type { TranslationFunction } from "../types";
 
-export const LOGIN_SCHEMA = {
-  EMAIl: "email",
-  PASSWORD: "password",
-};
+export enum LOGIN_SCHEMA {
+  EMAIl = "email",
+  PASSWORD = "password",
+}
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const getLoginSchema = (t: TranslationFunction) => {

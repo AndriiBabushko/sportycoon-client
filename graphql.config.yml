@@ -1,3 +1,3 @@
 schema:
-  - https://sportycoon-api.up.railway.app/graphql
+  - https://sportycoon-server.onrender.com/graphql
 documents: '**/*.graphql'

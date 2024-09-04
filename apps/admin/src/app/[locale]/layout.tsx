@@ -1,5 +1,10 @@
 import "@sportycoon/ui/styles/globals.css";
-import { TailwindIndicator, cn, ThemeProvider } from "@sportycoon/ui";
+import {
+  TailwindIndicator,
+  cn,
+  ThemeProvider,
+  ToastContainer,
+} from "@sportycoon/ui";
 import APIProvider from "@sportycoon/api";
 import { getMessages, NextIntlClientProvider } from "@sportycoon/locales";
 import type { Metadata } from "next";
@@ -48,7 +53,7 @@ export default async function RootLayout({
           "min-h-screen",
           "bg-background",
           "font-sans",
-          "antialiased",
+          "antialiased"
         )}
       >
         <NextIntlClientProvider messages={messages}>
@@ -62,6 +67,7 @@ export default async function RootLayout({
             </ThemeProvider>
           </APIProvider>
         </NextIntlClientProvider>
+        <ToastContainer />
         <TailwindIndicator
           isProduction={process.env.NODE_ENV === "production"}
         />
