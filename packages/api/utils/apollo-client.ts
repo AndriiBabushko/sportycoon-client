@@ -6,10 +6,10 @@ import {
 } from "@apollo/client";
 
 const httpLink = new HttpLink({
-  uri: "https://sportycoon-api.up.railway.app/graphql",
+  uri: "https://sportycoon-server.onrender.com/graphql",
 });
 
-export const client = new ApolloClient({
+export const apolloClient = new ApolloClient({
   link: ApolloLink.from([httpLink]),
   cache: new InMemoryCache(),
 });

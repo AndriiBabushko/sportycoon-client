@@ -8,6 +8,7 @@
     "module": "ESNext",
     "target": "es6",
     "strict": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "skipLibCheck": true
   }
 }

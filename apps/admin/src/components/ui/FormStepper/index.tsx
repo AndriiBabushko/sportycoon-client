@@ -37,6 +37,7 @@ export function FormStepper({ steps }: FormStepperProps): JSX.Element {
   const handleNext = useCallback(() => {
     setActiveStep((prev) => prev + 1);
   }, [setActiveStep]);
+
   const handlePrevious = useCallback(() => {
     setActiveStep((prev) => prev - 1);
   }, [setActiveStep]);
