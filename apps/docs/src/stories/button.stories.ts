@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Button } from "ui";
+import { Button } from "@sportycoon/ui";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta = {
@@ -9,8 +8,6 @@ const meta: Meta = {
   tags: ["autodocs"],
   argTypes: {
     children: { control: "text", defaultValue: "Button" },
-    variant: { control: "select" },
-    size: { control: "select" },
     rounded: {
       options: ["sm", "md", "sm", "lg", "xl", "full"],
       control: "select",
