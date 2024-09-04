@@ -20,7 +20,7 @@ import {
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 
 export function LoginForm(): JSX.Element {
-  const [login, { data, loading, error }] = useMutation(LOGIN_GQL);
+  const [login] = useMutation(LOGIN_GQL);
   const translate = useTranslations(TRANSLATES_NAMESPACES.LOGIN);
   const { register, handleSubmit } = useForm<TLoginSchema>({
     resolver: zodResolver(getLoginSchema(translate)),
