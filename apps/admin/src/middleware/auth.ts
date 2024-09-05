@@ -1,8 +1,15 @@
 import type { NextFetchEvent, NextMiddleware, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { apolloClient, setContext, ME } from "@sportycoon/api";
+import { AdminPages } from "@sportycoon/ui";
 
-const ignoredPaths = ["/", "/account/login", "/account/register"];
+const ignoredPaths = [
+  "",
+  AdminPages.ROOT,
+  AdminPages.REGISTER,
+  AdminPages.AUTH,
+  AdminPages.LOGIN,
+];
 
 export function withAuthMiddleware(middleware: NextMiddleware) {
   return async (req: NextRequest, event: NextFetchEvent) => {
@@ -17,15 +24,13 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
       return middleware(req, event);
     }
 
-    // If there's no token, redirect to the auth page
     if (!token) {
       return NextResponse.redirect(
-        new URL(`/${locale}/account/login`, req.url)
+        new URL(`/${locale}${AdminPages.AUTH}`, req.url)
       );
     }
 
     try {
-      // Set the authorization header for the GraphQL client
       apolloClient.setLink(
         setContext(() => ({
           headers: {
@@ -34,21 +39,18 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
         }))
       );
 
-      // Make the request to the GraphQL API to check authentication
       const { data } = await apolloClient.query({
         query: ME,
       });
 
-      // If the request is successful and user data is returned, allow the request to proceed
       if (!data.me.email) {
-        // If the user data is not returned, redirect to the auth page
         return NextResponse.redirect(
-          new URL(`/${locale}/account/login`, req.url)
+          new URL(`/${locale}${AdminPages.AUTH}`, req.url)
         );
       }
     } catch (error) {
       return NextResponse.redirect(
-        new URL(`/${locale}/account/login`, req.url)
+        new URL(`/${locale}${AdminPages.AUTH}`, req.url)
       );
     }
 

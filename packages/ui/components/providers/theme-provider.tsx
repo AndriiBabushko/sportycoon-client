@@ -1,14 +1,14 @@
 "use client";
 
 import * as React from "react";
-import type { JSX, ReactNode } from "react";
+import type { JSX } from "react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
 
-interface UIProviderProps {
-  children: ReactNode;
+interface ThemeProviderProps {
+  children: JSX.Element;
 }
 
-export function ThemeProvider({ children }: UIProviderProps): JSX.Element {
+export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
   return (
     <NextThemeProvider
       attribute="class"

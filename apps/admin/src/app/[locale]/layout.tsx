@@ -2,15 +2,15 @@ import "@sportycoon/ui/styles/globals.css";
 import {
   TailwindIndicator,
   cn,
-  ThemeProvider,
   ToastContainer,
+  UIProvider,
 } from "@sportycoon/ui";
 import APIProvider from "@sportycoon/api";
 import { getMessages, NextIntlClientProvider } from "@sportycoon/locales";
 import type { Metadata } from "next";
 import { fonts } from "@sportycoon/fonts";
-import { ChakraProvider } from "@chakra-ui/provider";
 import type { JSX } from "react";
+import { RootLayout } from "@admin/components/layouts";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description: "",
 };
 
-export default async function RootLayout({
+export default async function Layout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>): Promise<JSX.Element> {
@@ -48,23 +48,16 @@ export default async function RootLayout({
       {/*    rel="stylesheet"*/}
       {/*  />*/}
       {/*</Head>*/}
-      <body
-        className={cn(
-          "min-h-screen",
-          "bg-background",
-          "font-sans",
-          "antialiased"
-        )}
-      >
+      <body className={cn("min-h-screen", "bg-background", "antialiased")}>
         <NextIntlClientProvider messages={messages}>
           <APIProvider>
-            <ThemeProvider>
-              <ChakraProvider>
-                <div className="relative flex min-h-screen flex-col">
-                  <div className="flex-1">{children}</div>
+            <UIProvider>
+              <div className="relative flex min-h-screen flex-col">
+                <div className="flex-1">
+                  <RootLayout>{children}</RootLayout>
                 </div>
-              </ChakraProvider>
-            </ThemeProvider>
+              </div>
+            </UIProvider>
           </APIProvider>
         </NextIntlClientProvider>
         <ToastContainer />

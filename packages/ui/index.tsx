@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies -- Dependency is listed but error is thrown
 export { ToastContainer, toast } from "react-toastify";
 
 // Personal UI components

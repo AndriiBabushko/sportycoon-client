@@ -13,19 +13,13 @@ import {
   useSteps,
 } from "@chakra-ui/stepper";
 import { useCallback } from "react";
-import type { JSX, ReactNode } from "react";
-import { Button } from "@sportycoon/ui";
+import type { JSX } from "react";
 import { Box } from "@chakra-ui/layout";
-
-interface Step {
-  id: string;
-  renderComponent: ReactNode;
-  title: string;
-  description: string;
-}
+import type { FormStep } from "@ui/components/types";
+import { Button } from "@ui/components/common";
 
 interface FormStepperProps {
-  steps: Step[];
+  steps: FormStep[];
 }
 
 export function FormStepper({ steps }: FormStepperProps): JSX.Element {

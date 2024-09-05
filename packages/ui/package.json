@@ -24,6 +24,9 @@
     "typescript": "5.3.3"
   },
   "dependencies": {
+    "@chakra-ui/layout": "^2.3.1",
+    "@chakra-ui/provider": "^2.4.2",
+    "@chakra-ui/stepper": "^2.3.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@sportycoon/locales": "*",
     "class-variance-authority": "^0.7.0",
