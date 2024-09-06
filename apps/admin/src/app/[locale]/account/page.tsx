@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 
+// TODO: Implement the account page
 export default function Account(): JSX.Element {
   return (
     <div className="container flex flex-col gap-5">
