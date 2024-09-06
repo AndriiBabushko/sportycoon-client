@@ -13,8 +13,9 @@ export const useSpotifyAuth = () => {
   >({
     queryKey: ["spotify-auth"],
     queryFn: async () => {
-      const { data } =
-        await axiosInstance.get<SpotifyAuthResponse>("/auth/spotify");
+      const { data } = await axiosInstance.get<SpotifyAuthResponse>(
+        "/auth/spotify"
+      );
       return data;
     },
   });

@@ -40,7 +40,7 @@ const generateEnums = (): void => {
   // Find common keys among all JSON files
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   const commonKeys = Object.keys(jsonDataArray[0]).filter((key) =>
-    jsonDataArray.every((jsonData) => key in jsonData),
+    jsonDataArray.every((jsonData) => key in jsonData)
   );
 
   // Generate TypeScript enums for common keys
@@ -56,7 +56,7 @@ const generateEnums = (): void => {
         }
         return acc;
       },
-      {},
+      {}
     );
 
     // Generate enum for the current key
