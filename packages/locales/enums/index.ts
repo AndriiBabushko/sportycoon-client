@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 
+export enum UI {
+  TOGGLE_THEME = "TOGGLE_THEME",
+}
 export enum LOGIN {
   TITLE = "TITLE",
   EMAIL_PLACEHOLDER = "EMAIL_PLACEHOLDER",
@@ -19,6 +22,7 @@ export enum ERRORS {
   PASSWORD_TOO_SHORT = "PASSWORD_TOO_SHORT",
 }
 export enum TRANSLATES_NAMESPACES {
+  UI = "UI",
   LOGIN = "LOGIN",
   REGISTER = "REGISTER",
   ERRORS = "ERRORS",

@@ -2,7 +2,7 @@ import type { ReactNode, HTMLAttributes, JSX } from "react";
 import React from "react";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@ui/lib/utils";
 
 const Classes = {
   default: "font-normal",

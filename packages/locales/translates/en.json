@@ -1,4 +1,7 @@
 {
+  "UI": {
+    "TOGGLE_THEME": "Toggle theme"
+  },
   "LOGIN": {
     "TITLE": "Login",
     "EMAIL_PLACEHOLDER": "Enter your email",

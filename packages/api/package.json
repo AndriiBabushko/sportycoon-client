@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "build": "graphql-codegen --config codegen.ts",
+    "build": "rm -rf gql/__generated__ && graphql-codegen --config codegen.ts",
     "dev": "yarn build && graphql-codegen -w",
     "prod": "yarn build && graphql-codegen -w"
   },
