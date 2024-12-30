@@ -1,4 +1,4 @@
-import type { ReactNode, HTMLAttributes, JSX } from "react";
+import type { HTMLAttributes, JSX } from "react";
 import React from "react";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
@@ -6,41 +6,42 @@ import { cn } from "@ui/lib/utils";
 
 const Classes = {
   default: "font-normal",
-  textVariant: {
+  paragraphVariant: {
     nicoMoji: "--font-nicoMoji",
     montserrat: "--font-montserrat",
     montserratBold: "--font-montserrat font-bold",
   },
 };
 
-const textVariants = cva(Classes.default, {
+const paragraphVariants = cva(Classes.default, {
   variants: {
-    textVariant: Classes.textVariant,
+    paragraphVariant: Classes.paragraphVariant,
   },
   defaultVariants: {
-    textVariant: "montserrat",
+    paragraphVariant: "montserrat",
   },
 });
 
 export interface TextProps
   extends HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof textVariants> {
-  children: ReactNode;
-}
+    VariantProps<typeof paragraphVariants> {}
 
-function Text({
+function Paragraph({
   className,
-  textVariant,
+  paragraphVariant,
   children,
   ...props
 }: TextProps): JSX.Element {
   return (
-    <p className={cn(textVariants({ textVariant, className }))} {...props}>
+    <p
+      className={cn(paragraphVariants({ paragraphVariant, className }))}
+      {...props}
+    >
       {children}
     </p>
   );
 }
 
-Text.displayName = "Text";
+Paragraph.displayName = "Paragraph";
 
-export { Text, textVariants };
+export { Paragraph, paragraphVariants };

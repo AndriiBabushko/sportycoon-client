@@ -6,7 +6,11 @@
     "TITLE": "Login",
     "EMAIL_PLACEHOLDER": "Enter your email",
     "PASSWORD_PLACEHOLDER": "Enter your password",
-    "LOGIN_BUTTON_CAPTION": "Login"
+    "LOGIN_BUTTON_CAPTION": "Login",
+    "ERRORS": {
+      "INVALID_EMAIL": "Invalid email",
+      "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long"
+    }
   },
   "REGISTER": {
     "TITLE": "Create account",

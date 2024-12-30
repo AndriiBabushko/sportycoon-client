@@ -1,16 +1,16 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalEnv": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+  "globalEnv": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
   "tasks": {
     "dev:build": {
-      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
       "inputs": ["**/.env", "**/.env.production"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"],
       "cache": false,
       "persistent": false
     },
     "build": {
-      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
       "inputs": ["**/.env", "**/.env.production"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**", "storybook-static/**"],
       "cache": false,
@@ -30,14 +30,14 @@
       "dependsOn": ["^dev:build"]
     },
     "dev": {
-      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV", "NEXT_PUBLIC_ENV"],
       "inputs": ["**/.env", "**/.env.development"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"],
       "cache": false,
       "persistent": true
     },
     "prod": {
-      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL"],
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
       "inputs": ["**/.env", "**/.env.production"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"]
     }

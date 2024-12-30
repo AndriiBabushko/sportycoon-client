@@ -1,8 +1,6 @@
 import "@sportycoon/ui/styles/globals.css";
 import { fonts } from "@sportycoon/fonts";
 import type { JSX, ReactNode } from "react";
-import { cookies } from "next/headers";
-import type { ColorMode } from "@ui/index";
 import { Providers } from "./providers";
 
 interface RootLayoutProps {
@@ -16,18 +14,14 @@ export default function Layout({
   children,
   params: { locale },
 }: Readonly<RootLayoutProps>): JSX.Element {
-  const cookiesStore = cookies();
-  const colorMode = (cookiesStore.get("chakra-ui-color-mode")?.value ||
-    "dark") as ColorMode;
-
   return (
     <html
       className={`${fonts.montserrat.variable} ${fonts.nicoMoji.variable}`}
       lang={locale}
       suppressHydrationWarning
     >
-      <body suppressHydrationWarning>
-        <Providers colorMode={colorMode}>{children}</Providers>
+      <body>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

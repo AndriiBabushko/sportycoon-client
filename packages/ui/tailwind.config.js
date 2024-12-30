@@ -6,7 +6,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "../../packages/ui/components/**/*.{ts,tsx}",
+    "../../packages/ui/components/**/*",
   ],
   prefix: "",
   theme: {
@@ -14,6 +14,15 @@ module.exports = {
       fontFamily: {
         montserrat: ["var(--font-montserrat)", "sans-serif"],
         "nico-moji": ["var(--font-nico-moji)", "sans-serif"],
+      },
+      colors: {
+        primary: "#545452", // #545452 RGB(84, 84, 82)
+        secondary: "#BBBBBA", // #BBBBBA RGB(187, 187, 186)
+        tertiary: "#DDDDDC", // #DDDDDC RGB(221, 221, 220)
+        accent: "#767675", // #767675 RGB(118, 118, 117)
+        muted: "#989897", // #989897 RGB(152, 152, 151)
+        dark: "#333333", // чорний або темний колір для тексту
+        light: "#f5f5f5", // світлий колір для фону
       },
     },
   },

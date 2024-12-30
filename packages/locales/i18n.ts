@@ -9,5 +9,6 @@ export default getRequestConfig(async ({ locale }) => {
   return {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
     messages: (await import(`./translates/${locale}.json`)).default,
+    timeZone: "UTC",
   };
 });

@@ -1,14 +1,13 @@
-import type { ReactNode, ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@ui/lib/utils";
 
 const Classes = {
   default:
     "items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
-  buttonStyle: {
+  variant: {
     primary: "bg-gray-700 text-gray-100 hover:bg-gray-900",
     "outline-primary":
       "text-gray-700 border border-gray-700 hover:bg-gray-900 hover:text-gray-100",
@@ -19,13 +18,20 @@ const Classes = {
     "ghost-secondary": "text-gray-50 hover:bg-gray-100 hover:text-gray-900",
     link: "underline-offset-4 hover:underline text-primary",
   },
-  rounded: {
+  round: {
     default: "rounded-md",
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
     xl: "rounded-xl",
     full: "rounded-full",
+  },
+  size: {
+    sm: "px-[4px] py-[2px]",
+    md: "px-[8px] py-[4px]",
+    lg: "px-[12px] py-[6px]",
+    xl: "px-[16px] py-[8px]",
+    full: "w-full",
   },
   fullWidth: {
     false: "w-auto",
@@ -35,41 +41,31 @@ const Classes = {
 
 const buttonVariants = cva(Classes.default, {
   variants: {
-    buttonStyle: Classes.buttonStyle,
+    variant: Classes.variant,
     fullWidth: Classes.fullWidth,
-    rounded: Classes.rounded,
+    round: Classes.round,
   },
   defaultVariants: {
-    buttonStyle: "primary",
+    variant: "primary",
     fullWidth: false,
   },
 });
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  children: ReactNode;
-  className?: string;
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { className, buttonStyle, rounded, fullWidth, asChild = false, ...props },
-    ref
-  ) => {
-    const Comp = asChild ? Slot : "button";
-
+  ({ className, type, children, variant, round, fullWidth, ...props }, ref) => {
     return (
-      <Comp
-        className={cn(
-          buttonVariants({ buttonStyle, fullWidth, className, rounded })
-        )}
+      <button
+        className={cn(buttonVariants({ variant, fullWidth, className, round }))}
         ref={ref}
+        type={type || "button"}
         {...props}
       >
-        {props.children}
-      </Comp>
+        {children}
+      </button>
     );
   }
 );

@@ -4,9 +4,16 @@
     "baseUrl": ".",
     "paths": {
       "@admin/*": ["src/*"],
-      "@ui/*": ["../../packages/ui/*"]
     },
+    "allowJs": true,
+    "incremental": true
   },
-  "include": ["src", "next-env.d.ts", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

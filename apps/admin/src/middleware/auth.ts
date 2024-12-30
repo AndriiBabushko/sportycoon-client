@@ -1,9 +1,10 @@
 import type { NextFetchEvent, NextMiddleware, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { apolloClient, setContext, ME } from "@sportycoon/api";
-import { AdminPages } from "@sportycoon/ui";
+import { apolloClient, ME } from "@sportycoon/api";
+import { AdminPages, COOKIE_NAMES } from "@sportycoon/ui";
+import { cookies } from "next/headers";
 
-const ignoredPaths = [
+const ignoredUnAuthPaths = [
   "",
   AdminPages.ROOT,
   AdminPages.REGISTER,
@@ -11,44 +12,84 @@ const ignoredPaths = [
   AdminPages.LOGIN,
 ];
 
+const ignoredAuthPaths = [
+  AdminPages.REGISTER,
+  AdminPages.AUTH,
+  AdminPages.LOGIN,
+];
+
 export function withAuthMiddleware(middleware: NextMiddleware) {
   return async (req: NextRequest, event: NextFetchEvent) => {
-    const { nextUrl, headers } = req;
-    const token = headers.get("authorization");
+    const { nextUrl } = req;
+    const cookieStore = cookies();
+    const accessToken =
+      cookieStore.get(COOKIE_NAMES.ACCESS_TOKEN)?.value || undefined;
     const locale = nextUrl.locale || "en";
     const path = nextUrl.pathname;
 
     if (
-      ignoredPaths.some((ignoredPath) => path === `/${locale}${ignoredPath}`)
+      !accessToken &&
+      ignoredUnAuthPaths.some((ignoredPath) =>
+        path.startsWith(`/${locale}${ignoredPath}`)
+      )
     ) {
       return middleware(req, event);
     }
 
-    if (!token) {
+    if (!accessToken) {
       return NextResponse.redirect(
         new URL(`/${locale}${AdminPages.AUTH}`, req.url)
       );
     }
 
-    try {
-      apolloClient.setLink(
-        setContext(() => ({
-          headers: {
-            authorization: token ? `Bearer ${token}` : "",
-          },
-        }))
+    if (
+      ignoredAuthPaths.some(
+        (ignoredPath) => path === `/${locale}${ignoredPath}`
+      ) &&
+      accessToken
+    ) {
+      return NextResponse.redirect(
+        new URL(`/${locale}${AdminPages.DASHBOARD}`, req.url)
       );
+    }
 
-      const { data } = await apolloClient.query({
+    try {
+      const { data: meData } = await apolloClient.query({
         query: ME,
+        context: { accessToken },
       });
 
-      if (!data.me.email) {
+      if (!meData.me.email) {
         return NextResponse.redirect(
           new URL(`/${locale}${AdminPages.AUTH}`, req.url)
         );
       }
+
+      // if (refreshToken) {
+      //   const { data: refreshTokenData } = await apolloClient.mutate({
+      //     mutation: REFRESH_TOKEN,
+      //     variables: {
+      //       input: {
+      //         refresh_token: refreshToken,
+      //       },
+      //     },
+      //   });
+      //
+      //   if (refreshTokenData?.refreshToken.access_token) {
+      //     cookieStore.set(
+      //       COOKIE_NAMES.ACCESS_TOKEN,
+      //       refreshTokenData.refreshToken.access_token
+      //     );
+      //     cookieStore.set(
+      //       COOKIE_NAMES.REFRESH_TOKEN,
+      //       refreshTokenData.refreshToken.refresh_token
+      //     );
+      //   }
+      //
+      //   return middleware(req, event);
+      // }
     } catch (error) {
+      console.log(error);
       return NextResponse.redirect(
         new URL(`/${locale}${AdminPages.AUTH}`, req.url)
       );
