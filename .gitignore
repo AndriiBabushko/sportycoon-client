@@ -38,3 +38,5 @@ yarn-error.log*
 /apps/main/.idea/workspace.xml
 __generated__
 .storybook-static
+
+.idea
