@@ -1,2 +1,2 @@
-export * from "./root-layout";
-export * from "./dashboard-layout";
+export { default as RootLayout } from "./root-layout";
+export { default as DashboardLayout } from "./dashboard-layout";

@@ -1,14 +1,17 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
-import { LOCALES } from "./constants";
+import { routing } from "./routing";
 
-export default getRequestConfig(async ({ locale }) => {
-  if (!LOCALES.includes(locale)) notFound();
+export default getRequestConfig(async ({ requestLocale }) => {
+  let locale = await requestLocale;
+
+  // Ensure that a valid locale is used
+  if (!locale || !routing.locales.includes(locale)) {
+    locale = routing.defaultLocale;
+  }
 
   return {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
-    messages: (await import(`./translates/${locale}.json`)).default,
     timeZone: "UTC",
+    locale,
+    messages: (await import(`./translates/${locale}.json`)).default,
   };
 });

@@ -21,7 +21,9 @@ interface RootLayoutProps {
   children: JSX.Element | ReactNode;
 }
 
-export function DashboardLayout({ children }: RootLayoutProps): JSX.Element {
+export default function DashboardLayout({
+  children,
+}: RootLayoutProps): JSX.Element {
   const { data: meData } = useQuery(ME_DASHBOARD_LAYOUT);
 
   return (
@@ -43,7 +45,7 @@ export function DashboardLayout({ children }: RootLayoutProps): JSX.Element {
                   <Button variant="ghost-primary">
                     <Avatar
                       size="sm"
-                      src="https://avatars.dicebear.com/9.x/username.svg"
+                      src="https://i.pinimg.com/736x/43/3e/7e/433e7e7ed9a4cd23b563663e8fe65c5e.jpg"
                     />
                   </Button>
                 </MenuTrigger>
@@ -51,9 +53,9 @@ export function DashboardLayout({ children }: RootLayoutProps): JSX.Element {
                   <MenuItem value="account">
                     <Avatar
                       size="md"
-                      src="https://avatars.dicebear.com/9.x/username.svg"
+                      src="https://i.pinimg.com/736x/43/3e/7e/433e7e7ed9a4cd23b563663e8fe65c5e.jpg"
                     />
-                    <Box ml={2}>{meData?.me.username || "Guest"}</Box>
+                    <Box ml={2}>{meData?.me.username || "No Username"}</Box>
                   </MenuItem>
                   <MenuSeparator />
                   <MenuItem value="settings">Logout</MenuItem>

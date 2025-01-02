@@ -6,17 +6,17 @@ export const metadata = {
   title: "SportyCoon Dashboard | Spotify",
 };
 
-interface GoogleCallbackProps {
+interface SpotifyCallbackProps {
   searchParams: Record<string, string | undefined>;
   params: {
     locale: string;
   };
 }
 
-export default function GoogleCallback({
+export default function SpotifyCallback({
   searchParams,
   params,
-}: GoogleCallbackProps): JSX.Element {
+}: SpotifyCallbackProps): JSX.Element {
   const code = searchParams.code;
 
   if (!code) {

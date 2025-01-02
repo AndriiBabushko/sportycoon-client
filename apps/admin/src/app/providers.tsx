@@ -4,6 +4,7 @@ import type { ReactNode, JSX } from "react";
 import APIProvider from "@sportycoon/api";
 import { TailwindIndicator, ToastContainer } from "@sportycoon/ui";
 import { UIProvider } from "@admin/components/providers";
+import { getAuthTokens } from "@admin/actions";
 
 interface ProvidersProps {
   children: JSX.Element | ReactNode;
@@ -11,7 +12,7 @@ interface ProvidersProps {
 
 export function Providers({ children }: ProvidersProps): JSX.Element {
   return (
-    <APIProvider>
+    <APIProvider getAuthTokens={getAuthTokens}>
       <UIProvider>
         {children}
         <ToastContainer />

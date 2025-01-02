@@ -2,9 +2,11 @@
 
 import { cookies } from "next/headers";
 import { COOKIE_NAMES } from "@sportycoon/ui";
-import type { AuthTokens } from "@admin/types";
 
-export default async function getAuthTokens(): Promise<AuthTokens> {
+export default async function getAuthTokens(): Promise<{
+  access_token: string | undefined;
+  refresh_token: string | undefined;
+}> {
   return new Promise((resolve, reject) => {
     try {
       const cookieStore = cookies();
@@ -14,10 +16,6 @@ export default async function getAuthTokens(): Promise<AuthTokens> {
       const refreshToken = cookieStore.get(
         COOKIE_NAMES.REFRESH_TOKEN as string
       )?.value;
-
-      if (!accessToken || !refreshToken) {
-        reject(new Error("Tokens not found"));
-      }
 
       resolve({
         access_token: accessToken,

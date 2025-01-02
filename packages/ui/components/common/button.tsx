@@ -1,22 +1,22 @@
 import type { ButtonHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@ui/lib/utils";
+import { cn } from "@sportycoon/ui/lib/utils";
 
 const Classes = {
   default:
     "items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
   variant: {
-    primary: "bg-gray-700 text-gray-100 hover:bg-gray-900",
+    primary: "bg-[#454542] text-[#DDDDDC] hover:bg-[#767675]",
     "outline-primary":
-      "text-gray-700 border border-gray-700 hover:bg-gray-900 hover:text-gray-100",
-    secondary: "bg-gray-50 text-gray-900 hover:bg-gray-100",
+      "text-[#454542] border border-[#454542] hover:bg-[#767675] hover:text-[#DDDDDC]",
+    secondary: "bg-[#BBBBBA] text-[#454542] hover:bg-[#DDDDDC]",
     "outline-secondary":
-      "text-gray-50 border border-gray-50 hover:bg-gray-100 hover:text-gray-900",
-    "ghost-primary": "hover:bg-gray-900 hover:text-gray-100",
-    "ghost-secondary": "text-gray-50 hover:bg-gray-100 hover:text-gray-900",
-    link: "underline-offset-4 hover:underline text-primary",
+      "text-[#BBBBBA] border border-[#BBBBBA] hover:bg-[#DDDDDC] hover:text-[#454542]",
+    "ghost-primary": "hover:bg-[#454542] hover:text-[#DDDDDC]",
+    "ghost-secondary": "text-[#BBBBBA] hover:bg-[#DDDDDC] hover:text-[#454542]",
+    link: "text-[#454542] underline-offset-4 hover:underline hover:text-[#767675]",
   },
   round: {
     default: "rounded-md",
@@ -42,11 +42,13 @@ const Classes = {
 const buttonVariants = cva(Classes.default, {
   variants: {
     variant: Classes.variant,
+    size: Classes.size,
     fullWidth: Classes.fullWidth,
     round: Classes.round,
   },
   defaultVariants: {
     variant: "primary",
+    size: "md",
     fullWidth: false,
   },
 });
@@ -56,10 +58,15 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, type, children, variant, round, fullWidth, ...props }, ref) => {
+  (
+    { className, type, size, children, variant, round, fullWidth, ...props },
+    ref
+  ) => {
     return (
       <button
-        className={cn(buttonVariants({ variant, fullWidth, className, round }))}
+        className={cn(
+          buttonVariants({ variant, fullWidth, className, size, round })
+        )}
         ref={ref}
         type={type || "button"}
         {...props}

@@ -35,6 +35,12 @@ module.exports = {
   },
   ignorePatterns: ["node_modules/", "dist/"],
   rules: {
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-throw-literal": "off",
     "import/no-default-export": "off",
     "eslint-comments/require-description": "off",
     "no-console": "warn",

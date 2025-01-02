@@ -10,7 +10,7 @@ export default function Content(): JSX.Element {
   const router = useRouter();
 
   const handleRedirect = (page: string): void => {
-    router.push(page);
+    router.replace(page);
   };
 
   return (
@@ -40,10 +40,10 @@ export default function Content(): JSX.Element {
 
         <HStack justify="center" width="100%">
           <Link href={AdminPages.LOGIN}>
-            <Button buttonStyle="primary">Login</Button>
+            <Button variant="primary">Login</Button>
           </Link>
           <Link href={AdminPages.REGISTER}>
-            <Button buttonStyle="primary">Register</Button>
+            <Button variant="primary">Register</Button>
           </Link>
         </HStack>
 
@@ -53,18 +53,22 @@ export default function Content(): JSX.Element {
 
         <HStack justify="center" width="100%">
           <Button
-            buttonStyle="primary"
             onClick={() => {
-              handleRedirect("/auth/spotify");
+              handleRedirect(
+                `${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/spotify`
+              );
             }}
+            variant="primary"
           >
             Spotify
           </Button>
           <Button
-            buttonStyle="primary"
             onClick={() => {
-              handleRedirect("/auth/google");
+              handleRedirect(
+                `${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/google`
+              );
             }}
+            variant="primary"
           >
             Google
           </Button>

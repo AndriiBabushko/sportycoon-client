@@ -2,19 +2,16 @@
 
 import { ClientOnly, IconButton, Skeleton } from "@chakra-ui/react";
 import type { IconButtonProps } from "@chakra-ui/react";
+import type { ThemeProviderProps } from "next-themes";
 import { ThemeProvider, useTheme } from "next-themes";
 import * as React from "react";
 import { Icons } from "@sportycoon/ui";
-import type { ThemeProviderProps } from "next-themes/dist/types";
 import type { JSX } from "react";
 
 export type ColorModeProviderProps = ThemeProviderProps;
 
 export function ColorModeProvider(props: ColorModeProviderProps): JSX.Element {
-  return (
-    // @ts-expect-error attribute types work strange
-    <ThemeProvider attribute="class" disableTransitionOnChange {...props} />
-  );
+  return <ThemeProvider disableTransitionOnChange {...props} />;
 }
 
 export function useColorMode(): {
@@ -52,6 +49,7 @@ export const ColorModeButton = React.forwardRef<
   ColorModeButtonProps
 >(function ColorModeButton(props, ref) {
   const { toggleColorMode } = useColorMode();
+
   return (
     <ClientOnly fallback={<Skeleton boxSize="8" />}>
       <IconButton

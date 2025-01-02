@@ -2,7 +2,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 import createNextIntlPlugin from 'next-intl/plugin';
 import process from "process";
 
-const withNextIntl = createNextIntlPlugin();
+const withNextIntl = createNextIntlPlugin('./src/i18n.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

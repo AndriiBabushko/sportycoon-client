@@ -7,21 +7,26 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = new HttpLink({
-  uri: "https://sportycoon-server.onrender.com/graphql",
+  uri: `${
+    process.env.NEXT_PUBLIC_SPORTYCOON_API_URL ||
+    "https://sportycoon-server.onrender.com"
+  }/graphql`,
 });
 
-const authLink = setContext((_, prevContext) => {
-  const { accessToken } = prevContext;
-  // console.log(prevContext.headers);
+const authLink = setContext(async (_, prevContext) => {
+  const { getAuthTokens } = prevContext;
+  const tokens = await getAuthTokens();
 
   return {
     headers: {
-      authorization: accessToken ? `Bearer ${accessToken}` : "",
+      authorization: `Bearer ${tokens.access_token}`,
     },
   };
 });
 
-export const apolloClient = new ApolloClient({
+export const defaultApolloClientOptions = {
   link: ApolloLink.from([authLink, httpLink]),
   cache: new InMemoryCache(),
-});
+};
+
+export const apolloClient = new ApolloClient(defaultApolloClientOptions);

@@ -12,7 +12,7 @@ interface UIProviderProps {
 export function UIProvider({ children }: UIProviderProps): JSX.Element {
   return (
     <ChakraProvider value={defaultSystem}>
-      <ColorModeProvider>{children}</ColorModeProvider>
+      <ColorModeProvider defaultTheme="dark">{children}</ColorModeProvider>
     </ChakraProvider>
   );
 }

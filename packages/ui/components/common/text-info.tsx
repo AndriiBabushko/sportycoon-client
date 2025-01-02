@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import type { HTMLAttributes, JSX } from "react";
 import React from "react";
-import { cn } from "@ui/lib/utils";
+import { cn } from "@sportycoon/ui/lib/utils";
 import { Paragraph } from "./paragraph";
 
 const Classes = {
