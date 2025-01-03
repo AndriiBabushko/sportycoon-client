@@ -12,7 +12,7 @@
     "dev:main": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/main --filter @sportycoon/api --filter @sportycoon/locales",
     "dev:storybook": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/docs",
     "dev:both": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/admin --filter @sportycoon/main --filter @sportycoon/api --filter @sportycoon/locales",
-    "build:admin": "turbo run build --filter @sportycoon/ui --filter @sportycoon/admin --filter @sportycoon/api --filter @sportycoon/locales",
+    "build:admin": "turbo run build --filter @sportycoon/ui --filter @sportycoon/api --filter @sportycoon/locales --filter @sportycoon/admin",
     "build:main": "turbo run build --filter @sportycoon/ui --filter @sportycoon/main --filter @sportycoon/api --filter @sportycoon/locales",
     "build:docs": "turbo run build --filter @sportycoon/ui --filter @sportycoon/docs",
     "remove:turbo": "rm -rf .turbo ./apps/main/.turbo ./apps/docs/.turbo ./apps/admin/.turbo ./packages/api/.turbo ./packages/ui/.turbo",
