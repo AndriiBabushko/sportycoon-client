@@ -28,6 +28,11 @@
       "ADDRESS": "Address: Chudnivska St, 103, Zhytomyr"
     }
   },
+  "DASHBOARD": {
+    "AVATAR_ALT": "User avatar",
+    "NO_USERNAME": "No Username",
+    "LOGOUT": "Logout"
+  },
   "LOGIN": {
     "TITLE": "Login",
     "EMAIL_PLACEHOLDER": "Enter your email",

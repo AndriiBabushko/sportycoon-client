@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import type { Metadata } from "next";
-import { Content } from "./components";
 import { RootLayout } from "@admin/components/layouts";
+import { Content } from "./components";
 
 export const metadata: Metadata = {
   title: "SportyCoon Dashboard | Home",

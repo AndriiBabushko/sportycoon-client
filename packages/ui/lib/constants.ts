@@ -4,7 +4,7 @@ export enum AdminPages {
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
   DASHBOARD = "/dashboard",
-  ACCOUNT = "/account",
+  ACCOUNT = "/dashboard/account",
 }
 
 export const COOKIE_NAMES = {

@@ -9,6 +9,11 @@ export enum HOME {
   ABOUT = "ABOUT",
   CONTACT = "CONTACT",
 }
+export enum DASHBOARD {
+  AVATAR_ALT = "AVATAR_ALT",
+  NO_USERNAME = "NO_USERNAME",
+  LOGOUT = "LOGOUT",
+}
 export enum LOGIN {
   TITLE = "TITLE",
   EMAIL_PLACEHOLDER = "EMAIL_PLACEHOLDER",
@@ -32,6 +37,7 @@ export enum ERRORS {
 export enum TRANSLATES_NAMESPACES {
   UI = "UI",
   HOME = "HOME",
+  DASHBOARD = "DASHBOARD",
   LOGIN = "LOGIN",
   REGISTER = "REGISTER",
   ERRORS = "ERRORS",
