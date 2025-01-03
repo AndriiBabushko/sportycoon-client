@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { axiosInstance } from "../../utils";
 import type { User } from "../../gql/__generated__/graphql";
@@ -18,8 +18,9 @@ interface SpotifyErrorResponse {
   message: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useSpotifyAuth = (params: { code: string }) => {
+export const useSpotifyAuth = (params: {
+  code: string;
+}): UseQueryResult<SpotifyAuthResponse, SpotifyErrorResponse> => {
   return useQuery<SpotifyAuthResponse, SpotifyErrorResponse>({
     queryKey: ["spotify-auth", params.code],
     queryFn: async () => {

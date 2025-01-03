@@ -1,3 +1,4 @@
+import type { UseQueryResult } from "@tanstack/react-query";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { axiosInstance } from "../../utils";
@@ -18,8 +19,9 @@ interface GoogleErrorResponse {
   message: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const useGoogleAuth = (params: { code: string }) => {
+export const useGoogleAuth = (params: {
+  code: string;
+}): UseQueryResult<GoogleAuthResponse, GoogleErrorResponse> => {
   return useQuery<GoogleAuthResponse, GoogleErrorResponse>({
     queryKey: ["google-auth", params.code],
     queryFn: async () => {
