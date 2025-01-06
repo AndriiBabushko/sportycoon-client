@@ -1,4 +1,4 @@
-import { getMessages, routing } from "@sportycoon/locales";
+import { getMessages, setRequestLocale, routing } from "@sportycoon/locales";
 import type { JSX, ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { Providers } from "./providers";
@@ -10,6 +10,10 @@ interface RootLayoutProps {
   };
 }
 
+// export function generateStaticParams() {
+//   return routing.locales.map((locale) => ({ locale }));
+// }
+
 export default async function Layout({
   children,
   params: { locale },
@@ -19,6 +23,8 @@ export default async function Layout({
   if (!routing.locales.includes(locale)) {
     notFound();
   }
+
+  setRequestLocale(locale);
 
   return (
     <Providers locale={locale} messages={messages}>

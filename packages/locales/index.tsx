@@ -6,4 +6,4 @@ export {
   NextIntlClientProvider,
   type AbstractIntlMessages,
 } from "next-intl";
-export { getMessages } from "next-intl/server";
+export { getMessages, setRequestLocale } from "next-intl/server";

@@ -1,6 +1,8 @@
 {
   "UI": {
-    "TOGGLE_THEME": "Toggle theme"
+    "TOGGLE_THEME": "Toggle theme",
+    "SIGNUP_LOGIN": "Sign Up / Login",
+    "LOGO_ALT": "SportyCoon Logo"
   },
   "HOME": {
     "HERO": {
@@ -27,6 +29,15 @@
       "PHONE": "Phone: +380638179858",
       "ADDRESS": "Address: Chudnivska St, 103, Zhytomyr"
     }
+  },
+  "AUTH": {
+    "TITLE": "Account Authentication",
+    "DESCRIPTION": "Choose your preferred authentication method:",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "THIRD_PARTY": "Or authenticate with third-party services:",
+    "GOOGLE": "Google",
+    "SPOTIFY": "Spotify"
   },
   "DASHBOARD": {
     "AVATAR_ALT": "User avatar",

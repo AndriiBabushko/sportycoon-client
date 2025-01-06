@@ -2,12 +2,23 @@
 
 export enum UI {
   TOGGLE_THEME = "TOGGLE_THEME",
+  SIGNUP_LOGIN = "SIGNUP_LOGIN",
+  LOGO_ALT = "LOGO_ALT",
 }
 export enum HOME {
   HERO = "HERO",
   FEATURES = "FEATURES",
   ABOUT = "ABOUT",
   CONTACT = "CONTACT",
+}
+export enum AUTH {
+  TITLE = "TITLE",
+  DESCRIPTION = "DESCRIPTION",
+  LOGIN = "LOGIN",
+  REGISTER = "REGISTER",
+  THIRD_PARTY = "THIRD_PARTY",
+  GOOGLE = "GOOGLE",
+  SPOTIFY = "SPOTIFY",
 }
 export enum DASHBOARD {
   AVATAR_ALT = "AVATAR_ALT",
@@ -37,6 +48,7 @@ export enum ERRORS {
 export enum TRANSLATES_NAMESPACES {
   UI = "UI",
   HOME = "HOME",
+  AUTH = "AUTH",
   DASHBOARD = "DASHBOARD",
   LOGIN = "LOGIN",
   REGISTER = "REGISTER",

@@ -1,77 +1,85 @@
 "use client";
 
 import type { JSX } from "react";
-import { useRouter } from "next/navigation";
 import { Box, HStack, VStack } from "@chakra-ui/react";
-import Link from "next/link";
-import { Paragraph, Heading, AdminPages, Button } from "@sportycoon/ui";
+import { Paragraph, Heading, Button, AdminPages, Icons } from "@sportycoon/ui";
+import {
+  TRANSLATES_NAMESPACES,
+  useTranslations,
+  Link,
+} from "@sportycoon/locales";
+import { useColorModeValue } from "@admin/components/ui";
 
 export default function Content(): JSX.Element {
-  const router = useRouter();
+  const translateAuth = useTranslations(TRANSLATES_NAMESPACES.AUTH);
 
-  const handleRedirect = (page: string): void => {
-    router.replace(page);
-  };
+  const bgColor = useColorModeValue("gray.100", "gray.900");
+  const cardBg = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("gray.800", "gray.100");
+  const paragraphColor = useColorModeValue("gray.600", "gray.400");
+  const secondaryTextColor = useColorModeValue("gray.500", "gray.300");
+  const loginRegisterVariant = useColorModeValue("primary", "secondary");
 
   return (
     <Box
       alignItems="center"
-      bg="gray.100"
+      bg={bgColor}
+      color={textColor}
       display="flex"
       justifyContent="center"
       minHeight="100vh"
-      p={5}
+      p={6}
     >
       <VStack
         align="center"
-        bg="white"
+        bg={cardBg}
         borderRadius="md"
         boxShadow="lg"
+        gap={6}
         maxW="lg"
         p={8}
         width="100%"
       >
-        <Heading as="h1" headingVariant="nicoMojiBold">
-          Account Authentication
+        <Box mb={4}>
+          <Icons.SportycoonLogo height={60} />
+        </Box>
+
+        <Heading as="h1" headingVariant="montserratBold">
+          {translateAuth("TITLE")}
         </Heading>
-        <Paragraph color="gray.600">
-          Choose your preferred authentication method:
+
+        <Paragraph color={paragraphColor}>
+          {translateAuth("DESCRIPTION")}
         </Paragraph>
 
-        <HStack justify="center" width="100%">
+        <HStack gap={4} justify="center" width="100%">
           <Link href={AdminPages.LOGIN}>
-            <Button variant="primary">Login</Button>
+            <Button size="xl" variant={loginRegisterVariant}>
+              {translateAuth("LOGIN")}
+            </Button>
           </Link>
           <Link href={AdminPages.REGISTER}>
-            <Button variant="primary">Register</Button>
+            <Button size="xl" variant={loginRegisterVariant}>
+              {translateAuth("REGISTER")}
+            </Button>
           </Link>
         </HStack>
 
-        <Paragraph color="gray.500">
-          Or authenticate with third-party services:
+        <Paragraph color={secondaryTextColor}>
+          {translateAuth("THIRD_PARTY")}
         </Paragraph>
 
-        <HStack justify="center" width="100%">
-          <Button
-            onClick={() => {
-              handleRedirect(
-                `${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/spotify`
-              );
-            }}
-            variant="primary"
+        <HStack gap={4} justify="center" width="100%">
+          <Link
+            href={`${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/spotify`}
           >
-            Spotify
-          </Button>
-          <Button
-            onClick={() => {
-              handleRedirect(
-                `${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/google`
-              );
-            }}
-            variant="primary"
+            <Icons.Spotify height={50} width={50} />
+          </Link>
+          <Link
+            href={`${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/google`}
           >
-            Google
-          </Button>
+            <Icons.Google height={50} width={50} />
+          </Link>
         </HStack>
       </VStack>
     </Box>
