@@ -23,11 +23,7 @@ import {
   setContext,
   useMutation,
 } from "@sportycoon/api";
-import {
-  LOGIN,
-  TRANSLATES_NAMESPACES,
-  useTranslations,
-} from "@sportycoon/locales";
+import { TRANSLATES_NAMESPACES, useTranslations } from "@sportycoon/locales";
 import { useRouter } from "next/navigation";
 import { Box } from "@chakra-ui/react";
 import { setAuthTokens } from "@admin/actions";
@@ -97,7 +93,7 @@ export function LoginForm(): JSX.Element {
         type="email"
         {...register(LOGIN_SCHEMA.EMAIl)}
         color="#333333"
-        placeholder={translate(LOGIN.EMAIL_PLACEHOLDER)}
+        placeholder={translate("LOGIN.EMAIL_PLACEHOLDER")}
       />
       {formState.errors[LOGIN_SCHEMA.EMAIl]?.message ? (
         <FormErrorBox>
@@ -112,7 +108,7 @@ export function LoginForm(): JSX.Element {
         type="password"
         {...register(LOGIN_SCHEMA.PASSWORD)}
         color="#333333"
-        placeholder={translate(LOGIN.PASSWORD_PLACEHOLDER)}
+        placeholder={translate("LOGIN.PASSWORD_PLACEHOLDER")}
       />
       {formState.errors[LOGIN_SCHEMA.PASSWORD]?.message ? (
         <FormErrorBox>
@@ -123,7 +119,7 @@ export function LoginForm(): JSX.Element {
       ) : null}
 
       <Button color="white" type="submit">
-        {translate(LOGIN.LOGIN_BUTTON_CAPTION)}
+        {translate("LOGIN.LOGIN_BUTTON_CAPTION")}
       </Button>
     </Box>
   );
