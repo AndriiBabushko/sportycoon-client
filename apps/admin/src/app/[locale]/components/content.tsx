@@ -1,10 +1,9 @@
 "use client";
 
 import type { JSX } from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image, useColorModeValue } from "@chakra-ui/react";
 import { Paragraph, Heading, Button } from "@sportycoon/ui";
 import { TRANSLATES_NAMESPACES, useTranslations } from "@sportycoon/locales";
-import { useColorModeValue } from "@admin/components/ui";
 
 export default function Content(): JSX.Element {
   const translateHOME = useTranslations(TRANSLATES_NAMESPACES.HOME);
@@ -14,7 +13,7 @@ export default function Content(): JSX.Element {
   const aboutBg = useColorModeValue("gray.200", "gray.800");
 
   return (
-    <Box bg={bg} color={textColor} minH="100vh" p={8} borderRadius={8}>
+    <Box bg={bg} borderRadius={8} color={textColor} minH="100vh" p={8}>
       <Flex
         align="center"
         className="mb-16"
@@ -23,13 +22,13 @@ export default function Content(): JSX.Element {
         justify="center"
       >
         <Box flex="1" textAlign={{ base: "center", md: "left" }}>
-          <Heading as="h2" className="mb-4" headingVariant="montserratBold">
+          <Heading as="h2" className="mb-4" variant="montserratBold">
             {translateHOME("HERO.TITLE")}
           </Heading>
-          <Paragraph className="mb-8" paragraphVariant="montserrat">
+          <Paragraph className="mb-8" variant="montserrat">
             {translateHOME("HERO.DESCRIPTION")}
           </Paragraph>
-          <Button variant="primary" size="lg">
+          <Button size="lg" variant="primary">
             {translateHOME("HERO.BUTTON")}
           </Button>
         </Box>
@@ -44,26 +43,24 @@ export default function Content(): JSX.Element {
         />
       </Flex>
 
-      {/* Features Section */}
       <Box bg={featureBg} borderRadius="md" className="mb-16 p-6">
-        <Heading as="h2" className="mb-4" headingVariant="montserratBold">
+        <Heading as="h2" className="mb-4" variant="montserratBold">
           {translateHOME("FEATURES.TITLE")}
         </Heading>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("FEATURES.FEATURE_1")}
         </Paragraph>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("FEATURES.FEATURE_2")}
         </Paragraph>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("FEATURES.FEATURE_3")}
         </Paragraph>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("FEATURES.FEATURE_4")}
         </Paragraph>
       </Box>
 
-      {/* About Us Section */}
       <Flex
         align="center"
         bg={aboutBg}
@@ -75,10 +72,10 @@ export default function Content(): JSX.Element {
         p={8}
       >
         <Box className="mb-8 md:mb-0" flex="1">
-          <Heading as="h2" className="mb-4" headingVariant="montserratBold">
+          <Heading as="h2" className="mb-4" variant="montserratBold">
             {translateHOME("ABOUT.TITLE")}
           </Heading>
-          <Paragraph paragraphVariant="montserrat">
+          <Paragraph variant="montserrat">
             {translateHOME("ABOUT.DESCRIPTION")}
           </Paragraph>
         </Box>
@@ -91,18 +88,17 @@ export default function Content(): JSX.Element {
         />
       </Flex>
 
-      {/* Contact Section */}
       <Box textAlign="center">
-        <Heading as="h2" className="mb-4" headingVariant="montserratBold">
+        <Heading as="h2" className="mb-4" variant="montserratBold">
           {translateHOME("CONTACT.TITLE")}
         </Heading>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("CONTACT.EMAIL")}
         </Paragraph>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("CONTACT.PHONE")}
         </Paragraph>
-        <Paragraph paragraphVariant="montserrat">
+        <Paragraph variant="montserrat">
           {translateHOME("CONTACT.ADDRESS")}
         </Paragraph>
       </Box>

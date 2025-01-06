@@ -64,6 +64,7 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
       //   return middleware(req, event);
       // }
     } catch (error) {
+      // eslint-disable-next-line no-console -- This is a temporary solution
       console.log(error);
       // return NextResponse.redirect(
       //   new URL(`/${locale}${AdminPages.AUTH}`, req.url)

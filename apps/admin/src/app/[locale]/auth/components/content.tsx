@@ -1,14 +1,13 @@
 "use client";
 
 import type { JSX } from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, HStack, useColorModeValue, VStack } from "@chakra-ui/react";
 import { Paragraph, Heading, Button, AdminPages, Icons } from "@sportycoon/ui";
 import {
   TRANSLATES_NAMESPACES,
   useTranslations,
   Link,
 } from "@sportycoon/locales";
-import { useColorModeValue } from "@admin/components/ui";
 
 export default function Content(): JSX.Element {
   const translateAuth = useTranslations(TRANSLATES_NAMESPACES.AUTH);
@@ -44,7 +43,7 @@ export default function Content(): JSX.Element {
           <Icons.SportycoonLogo height={60} />
         </Box>
 
-        <Heading as="h1" headingVariant="montserratBold">
+        <Heading as="h1" variant="montserratBold">
           {translateAuth("TITLE")}
         </Heading>
 

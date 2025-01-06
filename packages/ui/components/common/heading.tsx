@@ -6,7 +6,7 @@ import { cn } from "@sportycoon/ui/lib/utils";
 
 const Classes = {
   default: "font-normal",
-  headingVariant: {
+  variant: {
     nicoMoji: "font-nico-moji",
     nicoMojiSemibold: "font-nico-moji font-semibold",
     nicoMojiBold: "font-nico-moji font-bold",
@@ -18,10 +18,10 @@ const Classes = {
 
 const headingVariants = cva(Classes.default, {
   variants: {
-    headingVariant: Classes.headingVariant,
+    variant: Classes.variant,
   },
   defaultVariants: {
-    headingVariant: "montserrat",
+    variant: "montserrat",
   },
 });
 
@@ -33,7 +33,7 @@ export interface HeadingProps
 
 function Heading({
   className,
-  headingVariant,
+  variant,
   children,
   as = "h1",
   ...props
@@ -41,10 +41,7 @@ function Heading({
   const Comp = as;
 
   return (
-    <Comp
-      className={cn(headingVariants({ headingVariant, className }))}
-      {...props}
-    >
+    <Comp className={cn(headingVariants({ variant, className }))} {...props}>
       {children}
     </Comp>
   );

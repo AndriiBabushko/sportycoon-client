@@ -42,7 +42,8 @@
   "DASHBOARD": {
     "AVATAR_ALT": "User avatar",
     "NO_USERNAME": "No Username",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "SETTINGS": "Settings"
   },
   "LOGIN": {
     "TITLE": "Login",

@@ -8,6 +8,7 @@ const Classes = {
     "items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
   variant: {
+    transparent: "bg-transparent",
     primary: "bg-[#454542] text-[#DDDDDC] hover:bg-[#767675]",
     "outline-primary":
       "text-[#454542] border border-[#454542] hover:bg-[#767675] hover:text-[#DDDDDC]",
@@ -27,6 +28,7 @@ const Classes = {
     full: "rounded-full",
   },
   size: {
+    paddingLess: "p-0",
     sm: "px-[4px] py-[2px]",
     md: "px-[8px] py-[4px]",
     lg: "px-[12px] py-[6px]",

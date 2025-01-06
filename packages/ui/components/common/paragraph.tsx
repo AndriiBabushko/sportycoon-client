@@ -6,7 +6,7 @@ import { cn } from "@sportycoon/ui/lib/utils";
 
 const Classes = {
   default: "font-normal",
-  paragraphVariant: {
+  variant: {
     nicoMoji: "--font-nicoMoji",
     montserrat: "--font-montserrat",
     montserratBold: "--font-montserrat font-bold",
@@ -15,10 +15,10 @@ const Classes = {
 
 const paragraphVariants = cva(Classes.default, {
   variants: {
-    paragraphVariant: Classes.paragraphVariant,
+    variant: Classes.variant,
   },
   defaultVariants: {
-    paragraphVariant: "montserrat",
+    variant: "montserrat",
   },
 });
 
@@ -28,15 +28,12 @@ export interface TextProps
 
 function Paragraph({
   className,
-  paragraphVariant,
+  variant,
   children,
   ...props
 }: TextProps): JSX.Element {
   return (
-    <p
-      className={cn(paragraphVariants({ paragraphVariant, className }))}
-      {...props}
-    >
+    <p className={cn(paragraphVariants({ variant, className }))} {...props}>
       {children}
     </p>
   );

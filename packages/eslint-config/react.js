@@ -38,6 +38,7 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "react/button-has-type": "off",
+    "@typescript-eslint/naming-convention": "off",
   },
   overrides: [
     {

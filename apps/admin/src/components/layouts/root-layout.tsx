@@ -1,14 +1,14 @@
 "use client";
 
 import type { JSX, ReactNode } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import { AdminPages, Button, Icons } from "@sportycoon/ui";
 import {
   TRANSLATES_NAMESPACES,
   useTranslations,
   Link,
 } from "@sportycoon/locales";
-import { useColorModeValue, ColorModeButton } from "@admin/components/ui";
+import { ThemeToggle } from "@admin/components/ui";
 
 interface RootLayoutProps {
   children: JSX.Element | ReactNode;
@@ -37,7 +37,8 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
           />
 
           <Flex alignItems="center" className="gap-4">
-            <ColorModeButton />
+            <ThemeToggle />
+
             <Link href={AdminPages.AUTH}>
               <Button variant={buttonVariant}>
                 {translateUI("SIGNUP_LOGIN")}
