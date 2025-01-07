@@ -19,9 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: |
-          npm install conventional-changelog-conventionalcommits
-          npm install @commitlint/cli @commitlint/config-conventional
+        run: yarn install --immutable --immutable-cache
 
       - name: Print versions
         run: |
