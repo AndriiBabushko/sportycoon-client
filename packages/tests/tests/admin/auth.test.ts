@@ -59,6 +59,7 @@ test.describe("Auth Page", () => {
 
     const spotifyIcon = page.locator(`[aria-label="spotify-icon"]`);
     await spotifyIcon.click();
+    await page.waitForTimeout(2000);
 
     const currentURL = page.url();
     expect(currentURL).toContain("https://accounts.spotify.com/en/login");
@@ -69,6 +70,7 @@ test.describe("Auth Page", () => {
 
     const googleIcon = page.locator(`[aria-label="google-icon"]`);
     await googleIcon.click();
+    await page.waitForTimeout(2000);
 
     const currentURL = page.url();
     expect(currentURL).toContain("https://accounts.google.com/v3/signin");
