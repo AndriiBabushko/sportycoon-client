@@ -1,9 +1,57 @@
 {
+  "UI": {
+    "TOGGLE_THEME": "Toggle theme",
+    "SIGNUP_LOGIN": "Sign Up / Login",
+    "LOGO_ALT": "SportyCoon Logo"
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "Sport as a Lifestyle, Victory as the Outcome!",
+      "DESCRIPTION": "Join the SportyCoon community and take your fitness journey to the next level.",
+      "BUTTON": "Learn More",
+      "IMAGE_ALT": "Hero Image"
+    },
+    "FEATURES": {
+      "TITLE": "Key Features",
+      "FEATURE_1": "Track your workouts and progress.",
+      "FEATURE_2": "Connect with fellow athletes.",
+      "FEATURE_3": "Access personalized training plans.",
+      "FEATURE_4": "Stay motivated with challenges."
+    },
+    "ABOUT": {
+      "TITLE": "About Us",
+      "DESCRIPTION": "SportyCoon is a leading platform dedicated to empowering athletes of all levels to achieve their fitness goals. Our innovative sports tracking technology allows users to monitor their progress and connect with a community of like-minded individuals.",
+      "IMAGE_ALT": "About Us Image"
+    },
+    "CONTACT": {
+      "TITLE": "Contact Us",
+      "EMAIL": "Email: sportycoon@gmail.com",
+      "PHONE": "Phone: +380638179858",
+      "ADDRESS": "Address: Chudnivska St, 103, Zhytomyr"
+    }
+  },
+  "AUTH": {
+    "TITLE": "Account Authentication",
+    "DESCRIPTION": "Choose your preferred authentication method:",
+    "LOGIN": "Login",
+    "REGISTER": "Register",
+    "THIRD_PARTY": "Or authenticate with third-party services:"
+  },
+  "DASHBOARD": {
+    "AVATAR_ALT": "User avatar",
+    "NO_USERNAME": "No Username",
+    "LOGOUT": "Logout",
+    "SETTINGS": "Settings"
+  },
   "LOGIN": {
     "TITLE": "Login",
     "EMAIL_PLACEHOLDER": "Enter your email",
     "PASSWORD_PLACEHOLDER": "Enter your password",
-    "LOGIN_BUTTON_CAPTION": "Login"
+    "LOGIN_BUTTON_CAPTION": "Login",
+    "ERRORS": {
+      "INVALID_EMAIL": "Invalid email",
+      "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long"
+    }
   },
   "REGISTER": {
     "TITLE": "Create account",
@@ -14,6 +62,7 @@
     "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password"
   },
   "ERRORS": {
+    "SOMETHING_WENT_WRONG": "Something went wrong",
     "INVALID_EMAIL": "Invalid email",
     "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long"
   }

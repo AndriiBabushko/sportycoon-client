@@ -1,2 +1,2 @@
-export * from "./theme-toggle";
-export * from "./icons";
+export { default as Icons } from "./icons";
+export { default as FormErrorBox } from "./form-error-box";

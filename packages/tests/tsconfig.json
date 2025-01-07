@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@sportycoon/tests/*": ["./*"],
     },
 
     "types": ["node", "react"]
