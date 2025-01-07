@@ -6,7 +6,7 @@
   "scripts": {
     "build": "dotenv -- turbo run build",
     "dev": "dotenv -- turbo run dev",
-    "ci:admin": "turbo run e2e:test:admin",
+    "e2e:test:admin": "dotenv -- turbo run e2e:test:admin",
     "dev:test": "dotenv -- turbo run dev:test",
     "dev:admin:dev": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/api --filter @sportycoon/locales --filter @sportycoon/admin ",
     "dev:admin:prod": "dotenv -- turbo run prod --filter @sportycoon/ui --filter @sportycoon/admin --filter @sportycoon/api --filter @sportycoon/locales",

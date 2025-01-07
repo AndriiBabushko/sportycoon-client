@@ -7,7 +7,7 @@
     "dev": "next dev --port 8080",
     "prod": "next dev --port 4000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 8080",
     "lint": "next lint"
   },
   "dependencies": {
