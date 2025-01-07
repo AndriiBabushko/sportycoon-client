@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { watch } from "chokidar";
+// import { watch } from "chokidar";
 
 const localesDir = path.join(__dirname, "translates");
 const outputDir = path.join(__dirname, "enums");
@@ -74,19 +74,19 @@ const generateEnums = (): void => {
 };
 
 // Determine if the environment is development or production
-const isDevelopment = process.env.NODE_ENV !== "production";
+// const isDevelopment = process.env.NODE_ENV !== "production";
 
 // Initial generation
 generateEnums();
 
-if (isDevelopment) {
-  // Watch for changes in JSON files and regenerate enums
-  watch(`${localesDir}/*.json`).on("change", (filePath) => {
-    // eslint-disable-next-line no-console
-    console.log(`File changed: ${filePath}`);
-    generateEnums();
-  });
-} else {
-  // eslint-disable-next-line no-console
-  console.log("Running in production mode. No file watching.");
-}
+// if (isDevelopment) {
+//   // Watch for changes in JSON files and regenerate enums
+//   watch(`${localesDir}/*.json`).on("change", (filePath) => {
+//     // eslint-disable-next-line no-console
+//     console.log(`File changed: ${filePath}`);
+//     generateEnums();
+//   });
+// } else {
+//   // eslint-disable-next-line no-console
+//   console.log("Running in production mode. No file watching.");
+// }

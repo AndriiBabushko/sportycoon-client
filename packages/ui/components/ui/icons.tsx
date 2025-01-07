@@ -18,6 +18,7 @@ const Icons = {
   ArrowBigDown,
   Spotify: (props: LucideProps) => (
     <svg
+      aria-label="spotify-icon"
       height="100"
       viewBox="0 0 50 50"
       width="100"
@@ -31,6 +32,7 @@ const Icons = {
   ),
   Google: (props: LucideProps) => (
     <svg
+      aria-label="google-icon"
       height="100"
       viewBox="0 0 50 50"
       width="100"
@@ -78,6 +80,7 @@ const Icons = {
   ),
   SportycoonLogo: (props: LucideProps) => (
     <svg
+      aria-label="sportycoon-logo"
       fill="none"
       height="61"
       viewBox="0 0 314 61"

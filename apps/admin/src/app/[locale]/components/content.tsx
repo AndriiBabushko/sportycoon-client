@@ -7,7 +7,7 @@ import { TRANSLATES_NAMESPACES, useTranslations } from "@sportycoon/locales";
 
 export default function Content(): JSX.Element {
   const translateHOME = useTranslations(TRANSLATES_NAMESPACES.HOME);
-  const bg = useColorModeValue("gray.100", "gray.900");
+  const bg = useColorModeValue("gray.200", "gray.900");
   const textColor = useColorModeValue("gray.800", "gray.100");
   const featureBg = useColorModeValue("white", "gray.700");
   const aboutBg = useColorModeValue("gray.200", "gray.800");

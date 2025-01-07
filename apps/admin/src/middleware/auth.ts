@@ -18,7 +18,8 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
     if (
       ignoredPaths.some((ignoredPath) =>
         path.includes(`/${locale}${ignoredPath}`)
-      )
+      ) ||
+      path === `/${locale}`
     ) {
       return middleware(req, event);
     }

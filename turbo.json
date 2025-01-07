@@ -20,8 +20,8 @@
       "dependsOn": ["^lint"]
     },
     "dev:test": {
-      "cache": false,
-      "persistent": true
+      "env": ["NEXT_PUBLIC_SPORTYCOON_API_URL"],
+      "inputs": [".env"]
     },
     "unit:test:admin": {
       "dependsOn": ["^dev:build"]
@@ -30,8 +30,8 @@
       "dependsOn": ["^dev:build"]
     },
     "dev": {
-      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV", "NEXT_PUBLIC_ENV"],
-      "inputs": ["**/.env", "**/.env.development"],
+      "env": ["NODE_ENV", "CI", "SPORTYCOON_API_URL", "NEXT_PUBLIC_SPORTYCOON_API_URL", "NEXT_PUBLIC_ENV"],
+      "inputs": [".env"],
       "outputs": [".next/**", "!.next/cache/**", "storybook-static/**"],
       "cache": false,
       "persistent": true

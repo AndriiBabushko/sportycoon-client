@@ -9,6 +9,7 @@
   },
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
+    "dev:build": "rm -rf enums && tsx generate-enums.ts",
     "dev": "rm -rf enums && tsx generate-enums.ts",
     "prod": "rm -rf enums && tsx generate-enums.ts"
   },
@@ -22,6 +23,7 @@
     "@sportycoon/ts-config": "*",
     "@types/react": "^18.2.0",
     "eslint": "^8.38.0",
+    "playwright-i18next-fixture": "^1.0.0",
     "tsx": "^4.16.2",
     "typescript": "5.3.3"
   }

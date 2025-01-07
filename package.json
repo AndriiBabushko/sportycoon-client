@@ -7,6 +7,7 @@
     "build": "dotenv -- turbo run build",
     "dev": "dotenv -- turbo run dev",
     "ci:admin": "turbo run e2e:test:admin",
+    "dev:test": "dotenv -- turbo run dev:test",
     "dev:admin:dev": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/api --filter @sportycoon/locales --filter @sportycoon/admin ",
     "dev:admin:prod": "dotenv -- turbo run prod --filter @sportycoon/ui --filter @sportycoon/admin --filter @sportycoon/api --filter @sportycoon/locales",
     "dev:main": "dotenv -- turbo run dev --filter @sportycoon/ui --filter @sportycoon/main --filter @sportycoon/api --filter @sportycoon/locales",
@@ -23,8 +24,8 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-conventional": "18.4.3",
     "@sportycoon/eslint-config": "*",
     "@turbo/gen": "latest",
     "dotenv-cli": "latest",

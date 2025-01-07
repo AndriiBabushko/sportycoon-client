@@ -17,6 +17,7 @@ export default function Content(): JSX.Element {
   const textColor = useColorModeValue("gray.800", "gray.100");
   const paragraphColor = useColorModeValue("gray.600", "gray.400");
   const secondaryTextColor = useColorModeValue("gray.500", "gray.300");
+  const iconsFill = useColorModeValue("fill-primary", "fill-secondary");
   const loginRegisterVariant = useColorModeValue("primary", "secondary");
 
   return (
@@ -72,12 +73,12 @@ export default function Content(): JSX.Element {
           <Link
             href={`${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/spotify`}
           >
-            <Icons.Spotify height={50} width={50} />
+            <Icons.Spotify className={iconsFill} height={50} width={50} />
           </Link>
           <Link
             href={`${process.env.NEXT_PUBLIC_SPORTYCOON_API_URL}/auth/google`}
           >
-            <Icons.Google height={50} width={50} />
+            <Icons.Google className={iconsFill} height={50} width={50} />
           </Link>
         </HStack>
       </VStack>

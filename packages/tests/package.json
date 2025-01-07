@@ -5,12 +5,13 @@
   "license": "MIT",
   "scripts": {
     "dev:test": "playwright test",
-    "e2e:test:admin": "start-server-and-test \"(cd ../../apps/admin && yarn run start)\" http://localhost:3000 \"playwright test\""
+    "e2e:test:admin": "start-server-and-test \"(cd ../../apps/admin && yarn run start)\" http://localhost:8080 \"playwright test\""
   },
   "dependencies": {
     "@sportycoon/admin": "*",
     "@sportycoon/api": "*",
     "@sportycoon/ui": "*",
+    "@sportycoon/locales": "*",
     "start-server-and-test": "^2.0.5"
   },
   "devDependencies": {

@@ -35,9 +35,7 @@
     "DESCRIPTION": "Choose your preferred authentication method:",
     "LOGIN": "Login",
     "REGISTER": "Register",
-    "THIRD_PARTY": "Or authenticate with third-party services:",
-    "GOOGLE": "Google",
-    "SPOTIFY": "Spotify"
+    "THIRD_PARTY": "Or authenticate with third-party services:"
   },
   "DASHBOARD": {
     "AVATAR_ALT": "User avatar",
