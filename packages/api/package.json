@@ -11,6 +11,7 @@
   "scripts": {
     "lint": "eslint .",
     "build": "rm -rf gql/__generated__ && graphql-codegen --config codegen.ts",
+    "build:api": "graphql-codegen --config codegen.ts",
     "dev": "yarn build && graphql-codegen -w",
     "prod": "yarn build && graphql-codegen -w"
   },
