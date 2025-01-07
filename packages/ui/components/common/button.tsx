@@ -1,31 +1,39 @@
-import type { ReactNode, ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 import React, { forwardRef } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Slot } from "@radix-ui/react-slot";
-import { cn } from "@/lib";
+import { cn } from "@sportycoon/ui/lib/utils";
 
 const Classes = {
   default:
     "items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none " +
     "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
-  buttonStyle: {
-    primary: "bg-gray-700 text-gray-100 hover:bg-gray-900",
+  variant: {
+    transparent: "bg-transparent",
+    primary: "bg-[#454542] text-[#DDDDDC] hover:bg-[#767675]",
     "outline-primary":
-      "text-gray-700 border border-gray-700 hover:bg-gray-900 hover:text-gray-100",
-    secondary: "bg-gray-50 text-gray-900 hover:bg-gray-100",
+      "text-[#454542] border border-[#454542] hover:bg-[#767675] hover:text-[#DDDDDC]",
+    secondary: "bg-[#BBBBBA] text-[#454542] hover:bg-[#DDDDDC]",
     "outline-secondary":
-      "text-gray-50 border border-gray-50 hover:bg-gray-100 hover:text-gray-900",
-    "ghost-primary": "hover:bg-gray-900 hover:text-gray-100",
-    "ghost-secondary": "text-gray-50 hover:bg-gray-100 hover:text-gray-900",
-    link: "underline-offset-4 hover:underline text-primary",
+      "text-[#BBBBBA] border border-[#BBBBBA] hover:bg-[#DDDDDC] hover:text-[#454542]",
+    "ghost-primary": "hover:bg-[#454542] hover:text-[#DDDDDC]",
+    "ghost-secondary": "text-[#BBBBBA] hover:bg-[#DDDDDC] hover:text-[#454542]",
+    link: "text-[#454542] underline-offset-4 hover:underline hover:text-[#767675]",
   },
-  rounded: {
+  round: {
     default: "rounded-md",
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
     xl: "rounded-xl",
     full: "rounded-full",
+  },
+  size: {
+    paddingLess: "p-0",
+    sm: "px-[4px] py-[2px]",
+    md: "px-[8px] py-[4px]",
+    lg: "px-[12px] py-[6px]",
+    xl: "px-[16px] py-[8px]",
+    full: "w-full",
   },
   fullWidth: {
     false: "w-auto",
@@ -35,43 +43,40 @@ const Classes = {
 
 const buttonVariants = cva(Classes.default, {
   variants: {
-    buttonStyle: Classes.buttonStyle,
+    variant: Classes.variant,
+    size: Classes.size,
     fullWidth: Classes.fullWidth,
-    rounded: Classes.rounded,
+    round: Classes.round,
   },
   defaultVariants: {
-    buttonStyle: "primary",
+    variant: "primary",
+    size: "md",
     fullWidth: false,
   },
 });
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  children: ReactNode;
-  className?: string;
-  asChild?: boolean;
-}
+    VariantProps<typeof buttonVariants> {}
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, buttonStyle, rounded, fullWidth, asChild = false, ...props },
-    ref,
+    { className, type, size, children, variant, round, fullWidth, ...props },
+    ref
   ) => {
-    const Comp = asChild ? Slot : "button";
-
     return (
-      <Comp
+      <button
         className={cn(
-          buttonVariants({ buttonStyle, fullWidth, className, rounded }),
+          buttonVariants({ variant, fullWidth, className, size, round })
         )}
         ref={ref}
+        type={type || "button"}
         {...props}
       >
-        {props.children}
-      </Comp>
+        {children}
+      </button>
     );
-  },
+  }
 );
 
 Button.displayName = "Button";

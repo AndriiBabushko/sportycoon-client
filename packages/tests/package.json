@@ -5,17 +5,18 @@
   "license": "MIT",
   "scripts": {
     "dev:test": "playwright test",
-    "e2e:test:admin": "start-server-and-test \"(cd ../../apps/admin && yarn run start)\" http://localhost:3000 \"playwright test\""
+    "e2e:test:admin": "start-server-and-test \"(cd ../../apps/admin && yarn run start)\" http://localhost:8080 \"playwright test\""
   },
   "dependencies": {
-    "start-server-and-test": "^2.0.5",
     "@sportycoon/admin": "*",
+    "@sportycoon/api": "*",
     "@sportycoon/ui": "*",
-    "@sportycoon/api": "*"
+    "@sportycoon/locales": "*",
+    "start-server-and-test": "^2.0.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.3",
-    "@sportycoon/ts-config": "*",
-    "@sportycoon/eslint-config": "*"
+    "@sportycoon/eslint-config": "*",
+    "@sportycoon/ts-config": "*"
   }
 }

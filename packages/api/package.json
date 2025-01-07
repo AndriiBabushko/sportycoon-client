@@ -10,7 +10,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "build": "graphql-codegen",
+    "build": "rm -rf gql/__generated__ && graphql-codegen --config codegen.ts",
+    "build:api": "graphql-codegen --config codegen.ts",
     "dev": "yarn build && graphql-codegen -w",
     "prod": "yarn build && graphql-codegen -w"
   },
@@ -18,6 +19,7 @@
     "@apollo/client": "^3.10.4",
     "@parcel/watcher": "^2.4.1",
     "@tanstack/react-query": "^5.45.1",
+    "@sportycoon/ui": "*",
     "axios": "^1.7.2",
     "react": "^18.2.0"
   },

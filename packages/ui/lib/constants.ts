@@ -1,16 +1,19 @@
 export enum AdminPages {
   ROOT = "/",
-  LOGIN = "/account/login",
-  REGISTER = "/account/register",
-  ACCOUNT = "/account",
+  AUTH = "/auth",
+  LOGIN = "/auth/login",
+  REGISTER = "/auth/register",
   DASHBOARD = "/dashboard",
+  ACCOUNT = "/dashboard/account",
+  ACCOUNT_SETTINGS = "/dashboard/account/settings",
 }
 
-// export enum CLIENT_PAGES {
-//   ROOT = "/",
-//   LOGIN = "/account/login",
-//   REGISTER = "/account/register",
-//   ACCOUNT = "/account",
-//   SHOP = "/shop",
-//   TRAINING = "/training",
-// }
+export const COOKIE_NAMES = {
+  ACCESS_TOKEN: "access_token",
+  REFRESH_TOKEN: "refresh_token",
+} as const;
+
+export const LOCAL_STORAGE_ITEM_NAMES = {
+  ACCESS_TOKEN: "access_token",
+  REFRESH_TOKEN: "refresh_token",
+} as const;
