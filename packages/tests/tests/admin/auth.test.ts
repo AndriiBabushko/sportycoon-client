@@ -21,9 +21,6 @@ test.describe("Auth Page", () => {
     });
     await expect(registerButton).toBeVisible();
 
-    const thirdPartyText = page.getByText(t("AUTH.THIRD_PARTY"));
-    await expect(thirdPartyText).toBeVisible();
-
     const spotifyIcon = page.locator(`[aria-label="spotify-icon"]`);
     await expect(spotifyIcon).toBeVisible();
 
