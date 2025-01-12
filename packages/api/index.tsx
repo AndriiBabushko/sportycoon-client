@@ -3,7 +3,13 @@ import SportyCoonApiProvider from "./provider";
 export * from "./utils";
 export * from "./gql";
 export * from "./rest";
-export { useQuery, useMutation } from "@apollo/client";
+export {
+  useQuery,
+  useMutation,
+  ApolloError,
+  useApolloClient,
+} from "@apollo/client";
+export { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 export { setContext } from "@apollo/client/link/context";
-
+export { useGQLPersist } from "./context";
 export default SportyCoonApiProvider;

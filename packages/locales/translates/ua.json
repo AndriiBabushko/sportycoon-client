@@ -1,70 +1,208 @@
 {
   "UI": {
-    "TOGGLE_THEME": "Toggle theme",
-    "SIGNUP_LOGIN": "Sign Up / Login",
-    "LOGO_ALT": "SportyCoon Logo"
+    "TOGGLE_THEME": "Перемкнути тему",
+    "SIGNUP_LOGIN": "Зареєструватися / Увійти",
+    "LOGO_ALT": "Логотип SportyCoon"
+  },
+  "MODALS": {
+    "DELETE_USER_ACCOUNT": {
+      "TITLE": "Підтвердження видалення",
+      "DESCRIPTION": "Ви впевнені, що хочете видалити свій обліковий запис? Цю дію неможливо скасувати.",
+      "CANCEL": "Скасувати",
+      "CONFIRM": "Підтвердити"
+    }
   },
   "HOME": {
     "HERO": {
-      "TITLE": "Sport as a Lifestyle, Victory as the Outcome!",
-      "DESCRIPTION": "Join the SportyCoon community and take your fitness journey to the next level.",
-      "BUTTON": "Learn More",
-      "IMAGE_ALT": "Hero Image"
+      "TITLE": "Спорт як стиль життя, перемога як результат!",
+      "DESCRIPTION": "Приєднуйтеся до спільноти SportyCoon і досягайте нових вершин у вашій фітнес-подорожі.",
+      "BUTTON": "Дізнатися більше",
+      "IMAGE_ALT": "Головне зображення"
     },
     "FEATURES": {
-      "TITLE": "Key Features",
-      "FEATURE_1": "Track your workouts and progress.",
-      "FEATURE_2": "Connect with fellow athletes.",
-      "FEATURE_3": "Access personalized training plans.",
-      "FEATURE_4": "Stay motivated with challenges."
+      "TITLE": "Ключові особливості",
+      "FEATURE_1": "Відстежуйте свої тренування та прогрес.",
+      "FEATURE_2": "Спілкуйтеся з іншими спортсменами.",
+      "FEATURE_3": "Отримуйте персоналізовані плани тренувань.",
+      "FEATURE_4": "Мотивуйтеся завдяки викликам."
     },
     "ABOUT": {
-      "TITLE": "About Us",
-      "DESCRIPTION": "SportyCoon is a leading platform dedicated to empowering athletes of all levels to achieve their fitness goals. Our innovative sports tracking technology allows users to monitor their progress and connect with a community of like-minded individuals.",
-      "IMAGE_ALT": "About Us Image"
+      "TITLE": "Про нас",
+      "DESCRIPTION": "SportyCoon – це провідна платформа, яка допомагає спортсменам будь-якого рівня досягати своїх фітнес-цілей. Наша інноваційна технологія дозволяє користувачам відстежувати свій прогрес і спілкуватися з однодумцями.",
+      "IMAGE_ALT": "Зображення про нас"
     },
     "CONTACT": {
-      "TITLE": "Contact Us",
-      "EMAIL": "Email: sportycoon@gmail.com",
-      "PHONE": "Phone: +380638179858",
-      "ADDRESS": "Address: Chudnivska St, 103, Zhytomyr"
+      "TITLE": "Контакти",
+      "EMAIL": "Електронна пошта: sportycoon@gmail.com",
+      "PHONE": "Телефон: +380638179858",
+      "ADDRESS": "Адреса: вул. Чуднівська, 103, Житомир"
     }
   },
   "AUTH": {
-    "TITLE": "Account Authentication",
-    "DESCRIPTION": "Choose your preferred authentication method:",
-    "LOGIN": "Login",
-    "REGISTER": "Register",
-    "THIRD_PARTY": "Or authenticate with third-party services:",
-    "GOOGLE": "Google",
-    "SPOTIFY": "Spotify"
+    "TITLE": "Аутентифікація облікового запису",
+    "LOGIN": "Увійти",
+    "REGISTER": "Зареєструватися"
   },
   "DASHBOARD": {
-    "AVATAR_ALT": "User avatar",
-    "NO_USERNAME": "No Username",
-    "LOGOUT": "Logout"
+    "TITLE": "Панель керування",
+    "AVATAR_ALT": "Аватар користувача",
+    "NO_USERNAME": "Ім'я користувача відсутнє",
+    "NO_FULL_NAME": "Повне ім'я відсутнє",
+    "LOGOUT": "Вийти",
+    "SETTINGS": "Налаштування"
   },
   "LOGIN": {
-    "TITLE": "Login",
-    "EMAIL_PLACEHOLDER": "Enter your email",
-    "PASSWORD_PLACEHOLDER": "Enter your password",
-    "LOGIN_BUTTON_CAPTION": "Login",
+    "TITLE": "Вхід",
+    "EMAIL_PLACEHOLDER": "Введіть вашу електронну пошту",
+    "PASSWORD_PLACEHOLDER": "Введіть ваш пароль",
+    "LOGIN_BUTTON_CAPTION": "Увійти",
     "ERRORS": {
-      "INVALID_EMAIL": "Invalid email",
-      "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long"
+      "INVALID_EMAIL": "Некоректна електронна пошта",
+      "PASSWORD_TOO_SHORT": "Пароль має містити щонайменше 6 символів"
     }
   },
   "REGISTER": {
-    "TITLE": "Create account",
-    "FIRST_NAME_PLACEHOLDER": "Enter your first name",
-    "LAST_NAME_PLACEHOLDER": "Enter your last name",
-    "EMAIL_PLACEHOLDER": "Enter your email",
-    "PASSWORD_PLACEHOLDER": "Enter your password",
-    "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password"
+    "STEPS": {
+      "ACCOUNT_DETAILS": "Деталі облікового запису",
+      "PHYSICAL_INFO": "Фізична інформація",
+      "GOALS_FITNESS": "Цілі та фітнес",
+      "PERFORMANCE": "Результати"
+    },
+    "FIELDS": {
+      "USERNAME": "Ім'я користувача",
+      "EMAIL": "Електронна пошта",
+      "PASSWORD": "Пароль",
+      "FULL_NAME": "Повне ім'я",
+      "GENDER": "Стать",
+      "HEIGHT": {
+        "VALUE": "Зріст",
+        "UNIT": "Одиниця вимірювання зросту"
+      },
+      "WEIGHT": {
+        "VALUE": "Вага",
+        "UNIT": "Одиниця вимірювання ваги"
+      },
+      "FITNESS_LEVEL": "Рівень фізичної підготовки",
+      "PERFORMANCE": {
+        "PULL_UPS": "Макс. підтягувань",
+        "PUSH_UPS": "Макс. віджимань",
+        "SQUATS": "Макс. присідань",
+        "DIPS": "Макс. віджимань на брусах"
+      }
+    },
+    "GOALS": {
+      "BUILD_MUSCLE": "Наростити м'язи",
+      "BUILD_STRENGTH": "Збільшити силу",
+      "IMPROVE_HEALTH": "Покращити здоров'я",
+      "LEARN_TECHNIQUES": "Вивчити техніки",
+      "LOSE_WEIGHT": "Схуднути"
+    },
+    "GENDER": {
+      "MALE": "чоловіча",
+      "FEMALE": "жіноча",
+      "OTHER": "інша"
+    },
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Ім'я користувача обов'язкове",
+      "EMAIL_REQUIRED": "Електронна пошта обов'язкова",
+      "INVALID_EMAIL": "Некоректна електронна пошта",
+      "PASSWORD_REQUIRED": "Пароль обов'язковий",
+      "PASSWORD_TOO_SHORT": "Пароль має містити щонайменше 8 символів",
+      "FULL_NAME_REQUIRED": "Повне ім'я обов'язкове",
+      "GENDER_REQUIRED": "Стать обов'язкова",
+      "HEIGHT_REQUIRED": "Зріст обов'язковий",
+      "UNIT_REQUIRED": "Одиниця вимірювання обов'язкова",
+      "GOAL_UNIT_REQUIRED": "Одиниця вимірювання цілі обов'язкова",
+      "WEIGHT_REQUIRED": "Вага обов'язкова",
+      "GOAL_WEIGHT_REQUIRED": "Вага цілі обов'язкова",
+      "GOALS_REQUIRED": "Необхідно обрати принаймні одну ціль",
+      "FITNESS_LEVEL_REQUIRED": "Рівень фізичної підготовки обов'язковий",
+      "PERFORMANCE_REQUIRED": "Це поле обов'язкове"
+    },
+    "BUTTONS": {
+      "NEXT": "Далі",
+      "BACK": "Назад",
+      "SUBMIT": "Надіслати"
+    }
+  },
+  "ACCOUNT": {
+    "HEADINGS": {
+      "VIEW_PROFILE": "Перегляд профілю",
+      "UPDATE_PROFILE": "Оновлення профілю",
+      "ACTIONS": "Дії"
+    },
+    "PARAGRAPHS": {
+      "ACCOUNT_DETAILS": "Деталі облікового запису",
+      "PHYSICAL_INFO": "Фізична інформація",
+      "GOALS_FITNESS": "Цілі та фітнес",
+      "PERFORMANCE": "Результати"
+    },
+    "GOALS": {
+      "BUILD_MUSCLE": "Наростити м'язи",
+      "BUILD_STRENGTH": "Збільшити силу",
+      "IMPROVE_HEALTH": "Покращити здоров'я",
+      "LEARN_TECHNIQUES": "Вивчити техніки",
+      "LOSE_WEIGHT": "Схуднути"
+    },
+    "GENDER": {
+      "MALE": "чоловіча",
+      "FEMALE": "жіноча",
+      "OTHER": "інша"
+    },
+    "FIELDS": {
+      "USERNAME": "Ім'я користувача",
+      "EMAIL": "Електронна пошта",
+      "PASSWORD": "Пароль",
+      "FULL_NAME": "Повне ім'я",
+      "GENDER": "Стать",
+      "HEIGHT": {
+        "VALUE": "Зріст",
+        "UNIT": "Одиниця вимірювання зросту"
+      },
+      "WEIGHT": {
+        "VALUE": "Вага",
+        "UNIT": "Одиниця вимірювання ваги"
+      },
+      "FITNESS_LEVEL": "Рівень фізичної підготовки",
+      "PERFORMANCE": {
+        "PULL_UPS": "Макс. підтягувань",
+        "PUSH_UPS": "Макс. віджимань",
+        "SQUATS": "Макс. присідань",
+        "DIPS": "Макс. віджимань на брусах"
+      },
+      "GOAL_WEIGHT_UNIT": "Одиниця вимірювання ваги цілі",
+      "GOAL_WEIGHT": "Вага цілі",
+      "GOALS": "Цілі"
+    },
+    "BUTTONS": {
+      "SAVE_CHANGES": "Зберегти зміни",
+      "EDIT_PROFILE": "Редагувати профіль",
+      "CANCEL": "Скасувати",
+      "DELETE_ACCOUNT": "Видалити обліковий запис",
+      "GOOGLE_CONNECTED": "Google підключено",
+      "CONNECT_GOOGLE": "Підключити Google",
+      "SPOTIFY_CONNECTED": "Spotify підключено",
+      "CONNECT_SPOTIFY": "Підключити Spotify"
+    },
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Ім'я користувача обов'язкове",
+      "EMAIL_REQUIRED": "Електронна пошта обов'язкова",
+      "INVALID_EMAIL": "Некоректна електронна пошта",
+      "FULL_NAME_REQUIRED": "Повне ім'я обов'язкове",
+      "GENDER_REQUIRED": "Стать обов'язкова",
+      "HEIGHT_REQUIRED": "Зріст обов'язковий",
+      "UNIT_REQUIRED": "Одиниця вимірювання обов'язкова",
+      "GOAL_UNIT_REQUIRED": "Одиниця вимірювання цілі обов'язкова",
+      "WEIGHT_REQUIRED": "Вага обов'язкова",
+      "GOAL_WEIGHT_REQUIRED": "Вага цілі обов'язкова",
+      "GOALS_REQUIRED": "Необхідно обрати принаймні одну ціль",
+      "FITNESS_LEVEL_REQUIRED": "Рівень фізичної підготовки обов'язковий",
+      "PERFORMANCE_REQUIRED": "Це поле обов'язкове"
+    }
   },
   "ERRORS": {
-    "SOMETHING_WENT_WRONG": "Something went wrong",
-    "INVALID_EMAIL": "Invalid email",
-    "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long"
+    "SOMETHING_WENT_WRONG": "Щось пішло не так",
+    "INVALID_EMAIL": "Некоректна електронна пошта",
+    "PASSWORD_TOO_SHORT": "Пароль має містити щонайменше 6 символів"
   }
 }

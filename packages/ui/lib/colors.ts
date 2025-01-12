@@ -6,4 +6,6 @@ export const COLORS = {
   DARK_GRAY: "#545452", // 700
   DARKEST_GRAY: "#2d2d2c", // 800
   DARK: "#1c1b1b", // 900
+  WHITE: "#FFFFFF",
+  BLACK: "#000000",
 } as const;
