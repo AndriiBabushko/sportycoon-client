@@ -16,11 +16,11 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
     const locale = nextUrl.locale || "en";
     let path = nextUrl.pathname;
 
-    console.log(1);
+    // console.log(1);
 
     if (!path.startsWith(`/${locale}`)) {
       path = `/${locale}${path.replace(/^\/(?<lang>ua|en)/, "")}`;
-      console.log("Normalized path:", path);
+      // console.log("Normalized path:", path);
     }
 
     if (
@@ -33,7 +33,7 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
       return middleware(req, event);
     }
 
-    console.log(2);
+    // console.log(2);
 
     if (!accessToken) {
       return NextResponse.redirect(
@@ -41,7 +41,7 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
       );
     }
 
-    console.log(3);
+    // console.log(3);
 
     try {
       const { data: meData } = await apolloClient.query({
@@ -61,14 +61,16 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
           },
         },
       });
-      console.log(4);
+
+      // console.log(4);
 
       if (!meData.me.email) {
         return NextResponse.redirect(
           new URL(`/${locale}${AdminPages.AUTH}`, req.url)
         );
       }
-      console.log(5);
+
+      // console.log(5);
 
       if (
         authPaths.some((authPath) => path.includes(`/${locale}${authPath}`))
@@ -109,7 +111,7 @@ export function withAuthMiddleware(middleware: NextMiddleware) {
       // );
     }
 
-    console.log(6);
+    // console.log(6);
 
     return middleware(req, event);
   };
