@@ -4,6 +4,14 @@
     "SIGNUP_LOGIN": "Sign Up / Login",
     "LOGO_ALT": "SportyCoon Logo"
   },
+  "MODALS": {
+    "DELETE_USER_ACCOUNT": {
+      "TITLE": "Confirm Deletion",
+      "DESCRIPTION": "Are you sure you want to delete your account? This action cannot be undone.",
+      "CANCEL": "Cancel",
+      "DELETE": "Delete"
+    }
+  },
   "HOME": {
     "HERO": {
       "TITLE": "Sport as a Lifestyle, Victory as the Outcome!",
@@ -32,14 +40,14 @@
   },
   "AUTH": {
     "TITLE": "Account Authentication",
-    "DESCRIPTION": "Choose your preferred authentication method:",
     "LOGIN": "Login",
-    "REGISTER": "Register",
-    "THIRD_PARTY": "Or authenticate with third-party services:"
+    "REGISTER": "Register"
   },
   "DASHBOARD": {
+    "TITLE": "Dashboard",
     "AVATAR_ALT": "User avatar",
     "NO_USERNAME": "No Username",
+    "NO_FULL_NAME": "No Full Name",
     "LOGOUT": "Logout",
     "SETTINGS": "Settings"
   },
@@ -74,7 +82,6 @@
         "VALUE": "Weight",
         "UNIT": "Weight Unit"
       },
-      "GOALS": "Goals",
       "FITNESS_LEVEL": "Fitness Level",
       "PERFORMANCE": {
         "PULL_UPS": "Max Pull-Ups",
@@ -82,6 +89,18 @@
         "SQUATS": "Max Squats",
         "DIPS": "Max Dips"
       }
+    },
+    "GOALS": {
+      "BUILD_MUSCLE": "Build Muscle",
+      "BUILD_STRENGTH": "Build Strength",
+      "IMPROVE_HEALTH": "Improve Health",
+      "LEARN_TECHNIQUES": "Learn Techniques",
+      "LOSE_WEIGHT": "Lose Weight"
+    },
+    "GENDER": {
+      "MALE": "male",
+      "FEMALE": "female",
+      "OTHER": "other"
     },
     "ERRORS": {
       "USERNAME_REQUIRED": "Username is required",
@@ -93,7 +112,9 @@
       "GENDER_REQUIRED": "Gender is required",
       "HEIGHT_REQUIRED": "Height is required",
       "UNIT_REQUIRED": "Unit is required",
+      "GOAL_UNIT_REQUIRED": "Goal unit is required",
       "WEIGHT_REQUIRED": "Weight is required",
+      "GOAL_WEIGHT_REQUIRED": "Goal weight is required",
       "GOALS_REQUIRED": "At least one goal is required",
       "FITNESS_LEVEL_REQUIRED": "Fitness level is required",
       "PERFORMANCE_REQUIRED": "This performance field is required"
@@ -102,6 +123,77 @@
       "NEXT": "Next",
       "BACK": "Back",
       "SUBMIT": "Submit"
+    }
+  },
+  "ACCOUNT": {
+    "HEADINGS": {
+      "VIEW_PROFILE": "View Profile",
+      "UPDATE_PROFILE": "Update Profile",
+      "ACTIONS": "Actions"
+    },
+    "PARAGRAPHS": {
+      "ACCOUNT_DETAILS": "Account Details",
+      "PHYSICAL_INFO": "Physical Info",
+      "GOALS_FITNESS": "Goals & Fitness",
+      "PERFORMANCE": "Performance"
+    },
+    "GOALS": {
+      "BUILD_MUSCLE": "Build Muscle",
+      "BUILD_STRENGTH": "Build Strength",
+      "IMPROVE_HEALTH": "Improve Health",
+      "LEARN_TECHNIQUES": "Learn Techniques",
+      "LOSE_WEIGHT": "Lose Weight"
+    },
+    "GENDER": {
+      "MALE": "male",
+      "FEMALE": "female",
+      "OTHER": "other"
+    },
+    "FIELDS": {
+      "USERNAME": "Username",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "FULL_NAME": "Full Name",
+      "GENDER": "Gender",
+      "HEIGHT": {
+        "VALUE": "Height",
+        "UNIT": "Height Unit"
+      },
+      "WEIGHT": {
+        "VALUE": "Weight",
+        "UNIT": "Weight Unit"
+      },
+      "FITNESS_LEVEL": "Fitness Level",
+      "PERFORMANCE": {
+        "PULL_UPS": "Max Pull-Ups",
+        "PUSH_UPS": "Max Push-Ups",
+        "SQUATS": "Max Squats",
+        "DIPS": "Max Dips"
+      },
+      "GOAL_WEIGHT_UNIT": "Goal Weight Unit",
+      "GOAL_WEIGHT": "Goal Weight",
+      "GOALS": "Goals"
+    },
+    "BUTTONS": {
+      "SAVE_CHANGES": "Save Changes",
+      "EDIT_PROFILE": "Edit Profile",
+      "CANCEL": "Cancel",
+      "DELETE_ACCOUNT": "Delete Account"
+    },
+    "ERRORS": {
+      "USERNAME_REQUIRED": "Username is required",
+      "EMAIL_REQUIRED": "Email is required",
+      "INVALID_EMAIL": "Invalid email address",
+      "FULL_NAME_REQUIRED": "Full name is required",
+      "GENDER_REQUIRED": "Gender is required",
+      "HEIGHT_REQUIRED": "Height is required",
+      "UNIT_REQUIRED": "Unit is required",
+      "GOAL_UNIT_REQUIRED": "Goal unit is required",
+      "WEIGHT_REQUIRED": "Weight is required",
+      "GOAL_WEIGHT_REQUIRED": "Goal weight is required",
+      "GOALS_REQUIRED": "At least one goal is required",
+      "FITNESS_LEVEL_REQUIRED": "Fitness level is required",
+      "PERFORMANCE_REQUIRED": "This performance field is required"
     }
   },
   "ERRORS": {

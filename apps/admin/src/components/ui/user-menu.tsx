@@ -11,7 +11,12 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AdminPages, Button, Paragraph, useLoader } from "@sportycoon/ui";
-import { ME_DASHBOARD_LAYOUT, useQuery } from "@sportycoon/api";
+import {
+  ME_ACCOUNT_PROFILE,
+  ME_DASHBOARD_LAYOUT,
+  useApolloClient,
+  useQuery,
+} from "@sportycoon/api";
 import {
   Link,
   TRANSLATES_NAMESPACES,
@@ -21,13 +26,10 @@ import {
 import { setAuthTokens } from "@admin/actions";
 
 export default function UserMenu(): JSX.Element {
-  const {
-    data: meData,
-    refetch: refetchAuthUser,
-    loading,
-  } = useQuery(ME_DASHBOARD_LAYOUT, {
+  const { data: meData, loading } = useQuery(ME_DASHBOARD_LAYOUT, {
     errorPolicy: "ignore",
   });
+  const apolloClient = useApolloClient();
   const router = useRouter();
   const { setTransitionLoading } = useLoader();
   const [_isPending, startTransition] = useTransition();
@@ -47,7 +49,10 @@ export default function UserMenu(): JSX.Element {
           access_token: "",
           refresh_token: "",
         });
-        await refetchAuthUser();
+        await apolloClient.clearStore();
+        await apolloClient.refetchQueries({
+          include: [ME_DASHBOARD_LAYOUT, ME_ACCOUNT_PROFILE],
+        });
         router.push(AdminPages.ROOT);
       } catch (e) {
         console.error("Error on logout", e);

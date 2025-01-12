@@ -9,6 +9,12 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { loadDevMessages, loadErrorMessages } from "@apollo/client/dev";
+
+if (process.env.NODE_ENV !== "production") {
+  loadDevMessages();
+  loadErrorMessages();
+}
 
 export const httpLink = new HttpLink({
   uri: `${

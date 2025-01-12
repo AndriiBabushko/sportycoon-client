@@ -7,9 +7,12 @@ import { cn } from "@sportycoon/ui/lib/utils";
 const Classes = {
   default: "font-normal",
   variant: {
-    nicoMoji: "--font-nicoMoji",
-    montserrat: "--font-montserrat",
-    montserratBold: "--font-montserrat font-bold",
+    nicoMoji: "font-nico-moji",
+    nicoMojiSemibold: "font-nico-moji font-semibold",
+    nicoMojiBold: "font-nico-moji font-bold",
+    montserrat: "font-montserrat",
+    montserratSemibold: "font-montserrat font-semibold",
+    montserratBold: "font-montserrat font-bold",
   },
 };
 

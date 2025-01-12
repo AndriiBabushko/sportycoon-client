@@ -8,7 +8,7 @@
     "dev:test": {
       "env": ["NEXT_PUBLIC_SPORTYCOON_API_URL"],
       "inputs": [".env"],
-      "cache": true
+      "cache": false
     },
     "unit:test:admin": {
       "dependsOn": ["^build"]

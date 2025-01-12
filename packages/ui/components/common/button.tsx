@@ -18,6 +18,10 @@ const Classes = {
     "ghost-primary": "hover:bg-[#454542] hover:text-[#DDDDDC]",
     "ghost-secondary": "text-[#BBBBBA] hover:bg-[#DDDDDC] hover:text-[#454542]",
     link: "text-[#454542] underline-offset-4 hover:underline hover:text-[#767675]",
+    "danger-dark": "bg-[#A11010] text-[#DDDDDC] hover:bg-[#C71616]",
+    "danger-light": "bg-[#E31B1B] text-[#DDDDDC] hover:bg-[#C71616]",
+    "success-dark": "bg-[#0A6A0A] text-[#DDDDDC] hover:bg-[#0C7A0C]",
+    "success-light": "bg-[#0A6A0A] text-[#DDDDDC] hover:bg-[#0C7A0C]",
   },
   round: {
     default: "rounded-md",

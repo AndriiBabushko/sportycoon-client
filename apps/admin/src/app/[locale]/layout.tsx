@@ -1,11 +1,6 @@
-import { loadDevMessages, loadErrorMessages } from "@sportycoon/api";
 import type { JSX, ReactNode } from "react";
 import { notFound } from "next/navigation";
-import {
-  getMessages,
-  setRequestLocale,
-  routing,
-} from "@sportycoon/locales";
+import { getMessages, setRequestLocale, routing } from "@sportycoon/locales";
 import { Providers } from "./providers";
 
 interface RootLayoutProps {
@@ -13,11 +8,6 @@ interface RootLayoutProps {
   params: {
     locale: string;
   };
-}
-
-if (process.env.NODE_ENV === "development") {
-  loadDevMessages();
-  loadErrorMessages();
 }
 
 export default async function Layout({

@@ -52,14 +52,13 @@ test.describe("Login Page", () => {
 
     const emailInput = page.locator(`input[type="email"]`);
     const passwordInput = page.locator('input[type="password"]');
-    await emailInput.fill("andriibabushko2@gmail.com");
+    await emailInput.fill("testuser8@example.com");
     await passwordInput.fill("qwerty12345");
 
     const loginButton = page.getByRole("button", {
       name: t("LOGIN.LOGIN_BUTTON_CAPTION"),
     });
     await loginButton.click();
-
     await page.waitForURL(`${ADMIN_HOST}/en${AdminPages.DASHBOARD}`);
     expect(page.url()).toBe(`${ADMIN_HOST}/en${AdminPages.DASHBOARD}`);
   });

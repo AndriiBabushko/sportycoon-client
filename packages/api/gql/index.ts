@@ -1,5 +1,6 @@
 export * from "./auth";
 export * from "./other";
+export * from "./user";
 export {
   Goal,
   Fitness_Level as FitnessLevel,

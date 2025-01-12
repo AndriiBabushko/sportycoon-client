@@ -2,7 +2,7 @@
 
 import type { JSX, ReactNode } from "react";
 import { Box, Flex, Stack, useColorModeValue } from "@chakra-ui/react";
-import { Icons } from "@sportycoon/ui";
+import { COLORS, Icons } from "@sportycoon/ui";
 import { ThemeToggle, UserMenu, LanguageSwitcher } from "@admin/components/ui";
 
 interface RootLayoutProps {
@@ -14,7 +14,7 @@ export default function DashboardLayout({
 }: RootLayoutProps): JSX.Element {
   const bg = useColorModeValue("white", "gray.800");
   const textColor = useColorModeValue("gray.800", "white");
-  const logoFill = useColorModeValue("fill-gray-800", "fill-white");
+  const logoFill = useColorModeValue(COLORS.DARK_GRAY, COLORS.WHITE_GRAY);
 
   return (
     <>
@@ -31,7 +31,8 @@ export default function DashboardLayout({
       >
         <Flex alignItems="center" justifyContent="space-between">
           <Icons.SportycoonRaccoonLogo
-            className={logoFill}
+            className="cursor-pointer"
+            fill={logoFill}
             height={64}
             width={120}
           />

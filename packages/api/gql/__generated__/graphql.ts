@@ -49,6 +49,16 @@ export type Avatar = {
   user_id: Scalars["String"]["output"];
 };
 
+export type DeleteUserInput = {
+  id: Scalars["String"]["input"];
+};
+
+export type DeleteUserResponse = {
+  __typename?: "DeleteUserResponse";
+  message: Scalars["String"]["output"];
+  statusCode: Scalars["Float"]["output"];
+};
+
 /** User fitness level */
 export enum Fitness_Level {
   Advanced = "ADVANCED",
@@ -115,9 +125,15 @@ export type LoginUserInput = {
 
 export type Mutation = {
   __typename?: "Mutation";
+  deleteUserProfile: DeleteUserResponse;
   login: LoginResponse;
   refreshToken: RefreshTokenResponse;
   register: RegisterResponse;
+  updateUserProfile: UpdateUserResponse;
+};
+
+export type MutationDeleteUserProfileArgs = {
+  deleteUserInput: DeleteUserInput;
 };
 
 export type MutationLoginArgs = {
@@ -132,6 +148,10 @@ export type MutationRegisterArgs = {
   registerUserInput: RegisterUserInput;
 };
 
+export type MutationUpdateUserProfileArgs = {
+  updateUserInput: UpdateUserInput;
+};
+
 export type Performance = {
   __typename?: "Performance";
   id: Scalars["String"]["output"];
@@ -143,10 +163,10 @@ export type Performance = {
 };
 
 export type PerformanceInput = {
-  max_dips: Scalars["Float"]["input"];
-  max_pull_ups: Scalars["Float"]["input"];
-  max_push_ups: Scalars["Float"]["input"];
-  max_squats: Scalars["Float"]["input"];
+  max_dips: Scalars["Int"]["input"];
+  max_pull_ups: Scalars["Int"]["input"];
+  max_push_ups: Scalars["Int"]["input"];
+  max_squats: Scalars["Int"]["input"];
 };
 
 export type Query = {
@@ -185,6 +205,34 @@ export type RegisterUserInput = {
   performance: PerformanceInput;
   username: Scalars["String"]["input"];
   weight: WeightInput;
+};
+
+export type UpdatePerformanceInput = {
+  max_dips?: InputMaybe<Scalars["Int"]["input"]>;
+  max_pull_ups?: InputMaybe<Scalars["Int"]["input"]>;
+  max_push_ups?: InputMaybe<Scalars["Int"]["input"]>;
+  max_squats?: InputMaybe<Scalars["Int"]["input"]>;
+};
+
+export type UpdateUserInput = {
+  email?: InputMaybe<Scalars["String"]["input"]>;
+  fitness_level?: InputMaybe<Scalars["FitnessLevelScalar"]["input"]>;
+  full_name?: InputMaybe<Scalars["String"]["input"]>;
+  gender?: InputMaybe<Scalars["GenderScalar"]["input"]>;
+  goal_weight?: InputMaybe<GoalWeightInput>;
+  goals?: InputMaybe<Array<Goal>>;
+  height?: InputMaybe<HeightInput>;
+  id: Scalars["String"]["input"];
+  performance?: InputMaybe<UpdatePerformanceInput>;
+  username?: InputMaybe<Scalars["String"]["input"]>;
+  weight?: InputMaybe<WeightInput>;
+};
+
+export type UpdateUserResponse = {
+  __typename?: "UpdateUserResponse";
+  message: Scalars["String"]["output"];
+  statusCode: Scalars["Float"]["output"];
+  user: User;
 };
 
 export type User = {
@@ -261,6 +309,38 @@ export type Me_Dashboard_LayoutQuery = {
   };
 };
 
+export type Me_Account_ProfileQueryVariables = Exact<{ [key: string]: never }>;
+
+export type Me_Account_ProfileQuery = {
+  __typename?: "Query";
+  me: {
+    __typename?: "User";
+    id: string;
+    username?: string | null;
+    full_name?: string | null;
+    email?: string | null;
+    gender?: Gender | null;
+    goals?: Array<Goal | null> | null;
+    fitness_level?: Fitness_Level | null;
+    spotify_id?: string | null;
+    google_id?: string | null;
+    height?: { __typename?: "Height"; unit: Height_Unit; value: number } | null;
+    weight?: { __typename?: "Weight"; unit: Weight_Unit; value: number } | null;
+    goal_weight?: {
+      __typename?: "GoalWeight";
+      unit: Weight_Unit;
+      value: number;
+    } | null;
+    performance?: {
+      __typename?: "Performance";
+      max_dips: number;
+      max_pull_ups: number;
+      max_push_ups: number;
+      max_squats: number;
+    } | null;
+  };
+};
+
 export type RefreshTokenMutationVariables = Exact<{
   input: RefreshTokenInput;
 }>;
@@ -290,6 +370,37 @@ export type RegisterMutation = {
 export type SayHelloQueryVariables = Exact<{ [key: string]: never }>;
 
 export type SayHelloQuery = { __typename?: "Query"; sayHello: string };
+
+export type Delete_User_ProfileMutationVariables = Exact<{
+  input: DeleteUserInput;
+}>;
+
+export type Delete_User_ProfileMutation = {
+  __typename?: "Mutation";
+  deleteUserProfile: {
+    __typename?: "DeleteUserResponse";
+    statusCode: number;
+    message: string;
+  };
+};
+
+export type Update_User_ProfileMutationVariables = Exact<{
+  input: UpdateUserInput;
+}>;
+
+export type Update_User_ProfileMutation = {
+  __typename?: "Mutation";
+  updateUserProfile: {
+    __typename?: "UpdateUserResponse";
+    statusCode: number;
+    user: {
+      __typename?: "User";
+      id: string;
+      email?: string | null;
+      username?: string | null;
+    };
+  };
+};
 
 export const LoginDocument = {
   kind: "Document",
@@ -404,6 +515,103 @@ export const Me_Dashboard_LayoutDocument = {
 } as unknown as DocumentNode<
   Me_Dashboard_LayoutQuery,
   Me_Dashboard_LayoutQueryVariables
+>;
+export const Me_Account_ProfileDocument = {
+  kind: "Document",
+  definitions: [
+    {
+      kind: "OperationDefinition",
+      operation: "query",
+      name: { kind: "Name", value: "ME_ACCOUNT_PROFILE" },
+      selectionSet: {
+        kind: "SelectionSet",
+        selections: [
+          {
+            kind: "Field",
+            name: { kind: "Name", value: "me" },
+            selectionSet: {
+              kind: "SelectionSet",
+              selections: [
+                { kind: "Field", name: { kind: "Name", value: "id" } },
+                { kind: "Field", name: { kind: "Name", value: "username" } },
+                { kind: "Field", name: { kind: "Name", value: "full_name" } },
+                { kind: "Field", name: { kind: "Name", value: "email" } },
+                { kind: "Field", name: { kind: "Name", value: "gender" } },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "height" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "unit" } },
+                      { kind: "Field", name: { kind: "Name", value: "value" } },
+                    ],
+                  },
+                },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "weight" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "unit" } },
+                      { kind: "Field", name: { kind: "Name", value: "value" } },
+                    ],
+                  },
+                },
+                { kind: "Field", name: { kind: "Name", value: "goals" } },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "fitness_level" },
+                },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "goal_weight" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "unit" } },
+                      { kind: "Field", name: { kind: "Name", value: "value" } },
+                    ],
+                  },
+                },
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "performance" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "max_dips" },
+                      },
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "max_pull_ups" },
+                      },
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "max_push_ups" },
+                      },
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "max_squats" },
+                      },
+                    ],
+                  },
+                },
+                { kind: "Field", name: { kind: "Name", value: "spotify_id" } },
+                { kind: "Field", name: { kind: "Name", value: "google_id" } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  Me_Account_ProfileQuery,
+  Me_Account_ProfileQueryVariables
 >;
 export const RefreshTokenDocument = {
   kind: "Document",
@@ -540,3 +748,127 @@ export const SayHelloDocument = {
     },
   ],
 } as unknown as DocumentNode<SayHelloQuery, SayHelloQueryVariables>;
+export const Delete_User_ProfileDocument = {
+  kind: "Document",
+  definitions: [
+    {
+      kind: "OperationDefinition",
+      operation: "mutation",
+      name: { kind: "Name", value: "DELETE_USER_PROFILE" },
+      variableDefinitions: [
+        {
+          kind: "VariableDefinition",
+          variable: {
+            kind: "Variable",
+            name: { kind: "Name", value: "input" },
+          },
+          type: {
+            kind: "NonNullType",
+            type: {
+              kind: "NamedType",
+              name: { kind: "Name", value: "DeleteUserInput" },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: "SelectionSet",
+        selections: [
+          {
+            kind: "Field",
+            name: { kind: "Name", value: "deleteUserProfile" },
+            arguments: [
+              {
+                kind: "Argument",
+                name: { kind: "Name", value: "deleteUserInput" },
+                value: {
+                  kind: "Variable",
+                  name: { kind: "Name", value: "input" },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: "SelectionSet",
+              selections: [
+                { kind: "Field", name: { kind: "Name", value: "statusCode" } },
+                { kind: "Field", name: { kind: "Name", value: "message" } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  Delete_User_ProfileMutation,
+  Delete_User_ProfileMutationVariables
+>;
+export const Update_User_ProfileDocument = {
+  kind: "Document",
+  definitions: [
+    {
+      kind: "OperationDefinition",
+      operation: "mutation",
+      name: { kind: "Name", value: "UPDATE_USER_PROFILE" },
+      variableDefinitions: [
+        {
+          kind: "VariableDefinition",
+          variable: {
+            kind: "Variable",
+            name: { kind: "Name", value: "input" },
+          },
+          type: {
+            kind: "NonNullType",
+            type: {
+              kind: "NamedType",
+              name: { kind: "Name", value: "UpdateUserInput" },
+            },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: "SelectionSet",
+        selections: [
+          {
+            kind: "Field",
+            name: { kind: "Name", value: "updateUserProfile" },
+            arguments: [
+              {
+                kind: "Argument",
+                name: { kind: "Name", value: "updateUserInput" },
+                value: {
+                  kind: "Variable",
+                  name: { kind: "Name", value: "input" },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: "SelectionSet",
+              selections: [
+                {
+                  kind: "Field",
+                  name: { kind: "Name", value: "user" },
+                  selectionSet: {
+                    kind: "SelectionSet",
+                    selections: [
+                      { kind: "Field", name: { kind: "Name", value: "id" } },
+                      { kind: "Field", name: { kind: "Name", value: "email" } },
+                      {
+                        kind: "Field",
+                        name: { kind: "Name", value: "username" },
+                      },
+                    ],
+                  },
+                },
+                { kind: "Field", name: { kind: "Name", value: "statusCode" } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  Update_User_ProfileMutation,
+  Update_User_ProfileMutationVariables
+>;
