@@ -97,6 +97,7 @@ export default function Content(): JSX.Element {
     useForm<TAccountSchema>({
       resolver: zodResolver(getAccountSchema(translate)),
       mode: "onSubmit",
+      reValidateMode: "onSubmit",
       defaultValues: {
         [ACCOUNT_SCHEMA.FULL_NAME]: meData?.me.full_name || "",
         [ACCOUNT_SCHEMA.EMAIL]: meData?.me.email || "",
@@ -186,6 +187,14 @@ export default function Content(): JSX.Element {
     startTransition(async () => {
       setTransitionLoading(true);
       if (meData?.me) {
+        const maxDips = data.performance_max_dips;
+        const maxPullUps = data.performance_max_pull_ups;
+        const maxPushUps = data.performance_max_push_ups;
+        const maxSquats = data.performance_max_squats;
+
+        const hasPerformanceData =
+          maxDips || maxPullUps || maxPushUps || maxSquats;
+
         await updateProfile({
           variables: {
             input: {
@@ -194,32 +203,46 @@ export default function Content(): JSX.Element {
               email: data.email,
               username: data.username,
               gender: data.gender,
-              height: data.height_value
-                ? {
-                    value: data.height_value,
-                    unit: data.height_unit,
-                  }
-                : undefined,
-              weight: data.weight_value
-                ? {
-                    value: data.weight_value,
-                    unit: data.weight_unit,
-                  }
-                : undefined,
+              height:
+                data.height_value && data.height_unit
+                  ? {
+                      value: data.height_value,
+                      unit: data.height_unit,
+                    }
+                  : undefined,
+              weight:
+                data.weight_value && data.weight_unit
+                  ? {
+                      value: data.weight_value,
+                      unit: data.weight_unit,
+                    }
+                  : undefined,
               goals: data.goals
                 ? data.goals.map((goal) => goal.value)
                 : undefined,
-              performance: {
-                max_dips: data.performance_max_dips || undefined,
-                max_pull_ups: data.performance_max_pull_ups || undefined,
-                max_push_ups: data.performance_max_push_ups || undefined,
-                max_squats: data.performance_max_squats || undefined,
-              },
+              performance: hasPerformanceData
+                ? {
+                    max_dips: maxDips ?? undefined,
+                    max_pull_ups: maxPullUps ?? undefined,
+                    max_push_ups: maxPushUps ?? undefined,
+                    max_squats: maxSquats ?? undefined,
+                  }
+                : undefined,
             },
           },
-        }).finally(() => {
-          setTransitionLoading(false);
-        });
+        })
+          .then(async () => {
+            try {
+              await apolloClient.refetchQueries({
+                include: [ME_ACCOUNT_PROFILE],
+              });
+            } catch (e) {
+              console.error("Error on profile update", e);
+            }
+          })
+          .finally(() => {
+            setTransitionLoading(false);
+          });
       }
     });
   };
@@ -312,6 +335,7 @@ export default function Content(): JSX.Element {
         minH="100vh"
         px={useBreakpointValue({ base: 4, md: 10 })}
         py={10}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <Flex
           bg={useColorModeValue("white", "gray.800")}
@@ -751,7 +775,7 @@ export default function Content(): JSX.Element {
 
               {isEditing ? (
                 <Button
-                  onClick={handleSubmit(onSubmit)}
+                  type={"submit"}
                   size="xl"
                   variant={saveChangesButtonVariant}
                 >

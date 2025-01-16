@@ -2,7 +2,9 @@
   "UI": {
     "TOGGLE_THEME": "Перемкнути тему",
     "SIGNUP_LOGIN": "Зареєструватися / Увійти",
-    "LOGO_ALT": "Логотип SportyCoon"
+    "LOGO_ALT": "Логотип SportyCoon",
+    "PAGE_NOT_FOUND": "Сторінку не знайдено",
+    "BACK_TO_HOME": "Повернутися на головну"
   },
   "MODALS": {
     "DELETE_USER_ACCOUNT": {
@@ -197,7 +199,10 @@
       "GOAL_WEIGHT_REQUIRED": "Вага цілі обов'язкова",
       "GOALS_REQUIRED": "Необхідно обрати принаймні одну ціль",
       "FITNESS_LEVEL_REQUIRED": "Рівень фізичної підготовки обов'язковий",
-      "PERFORMANCE_REQUIRED": "Це поле обов'язкове"
+      "PERFORMANCE_REQUIRED": "Це поле обов'язкове",
+      "INVALID_HEIGHT_DATA": "Значення зросту і одиниця вимірювання мають бути заповнені разом або обидва пропущені",
+      "INVALID_WEIGHT_DATA": "Значення ваги і одиниця вимірювання мають бути заповнені разом або обидва пропущені",
+      "INVALID_GOAL_WEIGHT_DATA": "Цільова вага і одиниця вимірювання мають бути заповнені разом або обидва пропущені"
     }
   },
   "ERRORS": {
