@@ -18,7 +18,7 @@ test.describe("Account Page", () => {
     await loginButton.click();
     await page.waitForURL(`${ADMIN_HOST}/en${AdminPages.DASHBOARD}`);
     expect(page.url()).toBe(`${ADMIN_HOST}/en${AdminPages.DASHBOARD}`);
-    await page.goto(`${ADMIN_HOST}/en${AdminPages.ACCOUNT}`);
+    await page.goto(`${ADMIN_HOST}/en${AdminPages.ACCOUNT_SETTINGS}`);
   });
 
   test("should display account details and allow editing", async ({
