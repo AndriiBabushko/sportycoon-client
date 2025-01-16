@@ -2,12 +2,12 @@ import type { JSX } from "react";
 import { useTransition } from "react";
 import {
   Avatar,
+  Box,
   Menu,
   MenuButton,
   MenuDivider,
   MenuItem,
   MenuList,
-  Skeleton,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { AdminPages, Button, Paragraph, useLoader } from "@sportycoon/ui";
@@ -18,15 +18,15 @@ import {
   useQuery,
 } from "@sportycoon/api";
 import {
-  Link,
   TRANSLATES_NAMESPACES,
   useRouter,
   useTranslations,
 } from "@sportycoon/locales";
 import { setAuthTokens } from "@admin/actions";
+import Link from "next/link";
 
 export default function UserMenu(): JSX.Element {
-  const { data: meData, loading } = useQuery(ME_DASHBOARD_LAYOUT, {
+  const { data: meData } = useQuery(ME_DASHBOARD_LAYOUT, {
     errorPolicy: "ignore",
   });
   const apolloClient = useApolloClient();
@@ -63,7 +63,7 @@ export default function UserMenu(): JSX.Element {
   };
 
   return (
-    <Skeleton isLoaded={!loading}>
+    <>
       {!meData ? (
         <Link href={AdminPages.AUTH}>
           <Button variant={buttonVariant}>{translateUI("SIGNUP_LOGIN")}</Button>
@@ -77,11 +77,13 @@ export default function UserMenu(): JSX.Element {
             />
           </MenuButton>
           <MenuList>
-            <MenuItem value="account">
-              <Link
-                className="flex flex-row gap-[8px] items-center"
-                href={AdminPages.ACCOUNT}
-              >
+            <MenuItem
+              value="account"
+              onClick={() => {
+                router.push(AdminPages.ACCOUNT_SETTINGS);
+              }}
+            >
+              <Box className="flex flex-row gap-[8px] items-center">
                 <Avatar
                   size="md"
                   src="https://i.pinimg.com/736x/43/3e/7e/433e7e7ed9a4cd23b563663e8fe65c5e.jpg"
@@ -89,7 +91,7 @@ export default function UserMenu(): JSX.Element {
                 <Paragraph className="text-[16px]" variant="montserratBold">
                   {meData.me.username || translateDashboard("NO_USERNAME")}
                 </Paragraph>
-              </Link>
+              </Box>
             </MenuItem>
             <MenuDivider />
             <MenuItem value="fullName">
@@ -97,25 +99,25 @@ export default function UserMenu(): JSX.Element {
                 {meData.me.full_name || translateDashboard("NO_FULL_NAME")}
               </Paragraph>
             </MenuItem>
-            <MenuItem value="dashboard">
-              <Link
-                className="flex flex-row gap-[8px] items-center"
-                href={AdminPages.DASHBOARD}
-              >
-                <Paragraph className="text-[14px]" variant="montserrat">
-                  {translateDashboard("TITLE")}
-                </Paragraph>
-              </Link>
+            <MenuItem
+              value="dashboard"
+              onClick={() => {
+                router.push(AdminPages.DASHBOARD);
+              }}
+            >
+              <Paragraph className="text-[14px]" variant="montserrat">
+                {translateDashboard("TITLE")}
+              </Paragraph>
             </MenuItem>
-            <MenuItem value="account">
-              <Link
-                className="flex flex-row gap-[8px] items-center"
-                href={AdminPages.ACCOUNT_SETTINGS}
-              >
-                <Paragraph className="text-[14px]" variant="montserrat">
-                  {translateDashboard("SETTINGS")}
-                </Paragraph>
-              </Link>
+            <MenuItem
+              value="account"
+              onClick={() => {
+                router.push(AdminPages.ACCOUNT_SETTINGS);
+              }}
+            >
+              <Paragraph className="text-[14px]" variant="montserrat">
+                {translateDashboard("SETTINGS")}
+              </Paragraph>
             </MenuItem>
             <MenuItem onClick={onLogout} value="logout">
               <Paragraph className="text-[14px]" variant="montserrat">
@@ -125,6 +127,6 @@ export default function UserMenu(): JSX.Element {
           </MenuList>
         </Menu>
       )}
-    </Skeleton>
+    </>
   );
 }

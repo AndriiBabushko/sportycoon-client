@@ -1,4 +1,5 @@
 import type { JSX, ReactNode } from "react";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getMessages, setRequestLocale, routing } from "@sportycoon/locales";
 import { Providers } from "./providers";
@@ -23,8 +24,10 @@ export default async function Layout({
   setRequestLocale(locale);
 
   return (
-    <Providers locale={locale} messages={messages}>
-      {children}
-    </Providers>
+    <Suspense fallback={<>Something</>}>
+      <Providers locale={locale} messages={messages}>
+        {children}
+      </Providers>
+    </Suspense>
   );
 }

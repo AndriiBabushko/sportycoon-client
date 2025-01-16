@@ -2,7 +2,9 @@
   "UI": {
     "TOGGLE_THEME": "Toggle theme",
     "SIGNUP_LOGIN": "Sign Up / Login",
-    "LOGO_ALT": "SportyCoon Logo"
+    "LOGO_ALT": "SportyCoon Logo",
+    "PAGE_NOT_FOUND": "Page Not Found",
+    "BACK_TO_HOME": "Back to Home"
   },
   "MODALS": {
     "DELETE_USER_ACCOUNT": {
@@ -197,7 +199,10 @@
       "GOAL_WEIGHT_REQUIRED": "Goal weight is required",
       "GOALS_REQUIRED": "At least one goal is required",
       "FITNESS_LEVEL_REQUIRED": "Fitness level is required",
-      "PERFORMANCE_REQUIRED": "This performance field is required"
+      "PERFORMANCE_REQUIRED": "This performance field is required",
+      "INVALID_HEIGHT_DATA": "Height value and unit must both be filled or both be empty",
+      "INVALID_WEIGHT_DATA": "Weight value and unit must both be filled or both be empty",
+      "INVALID_GOAL_WEIGHT_DATA": "Goal weight value and unit must both be filled or both be empty"
     }
   },
   "ERRORS": {
