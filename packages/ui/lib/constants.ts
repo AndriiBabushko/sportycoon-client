@@ -11,6 +11,7 @@ export enum AdminPages {
 export const COOKIE_NAMES = {
   ACCESS_TOKEN: "access_token",
   REFRESH_TOKEN: "refresh_token",
+  LOCALE: "NEXT_LOCALE",
 } as const;
 
 export const LOCAL_STORAGE_ITEM_NAMES = {

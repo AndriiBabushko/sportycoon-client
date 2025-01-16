@@ -7,6 +7,7 @@ export type TranslationFunc = Awaited<
 export * from "./constants";
 export * from "./enums";
 export * from "./routing";
+export * from "./translator";
 export * from "./i18n-fixture";
 export {
   useLocale,
